@@ -13,7 +13,7 @@ export class AddressComponent implements OnInit {
     title = 'Where do you live?';
     address: Address;
     form: any;
-    
+
     constructor(private router: Router, private formDataService: FormDataService) {
     }
 
@@ -26,15 +26,15 @@ export class AddressComponent implements OnInit {
         if (!form.valid) {
             return false;
         }
-            
+
         this.formDataService.setAddress(this.address);
         return true;
     }
 
     goToPrevious(form: any) {
         if (this.save(form)) {
-            // Navigate to the work page
-            this.router.navigate(['/work']);
+            // Navigate to the plan page
+            this.router.navigate(['/plan']);
         }
     }
 

@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LocationComponent } from './location/location.component';
-import { WorkComponent } from './work/work.component';
+import { PlanComponent } from './plan/plan.component';
 import { AddressComponent } from './address/address.component';
 import { ResultComponent } from './result/result.component';
 
 import { WorkflowGuard } from './workflow/workflow-guard.service';
 import { WorkflowService } from './workflow/workflow.service';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
 
 
 export const appRoutes: Routes = [
     // 1st Route
     { path: 'location',  component: LocationComponent },
     // 2nd Route
-    { path: 'work',  component: WorkComponent, canActivate: [WorkflowGuard] },
+    { path: 'plan',  component: PlanComponent, canActivate: [WorkflowGuard] },
     // 3rd Route
     { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },
     // 4th Route

@@ -8,7 +8,7 @@ import { NavbarComponent }    from './navbar/navbar.component';
 
 /* Feature Components */
 import { LocationComponent }  from './location/location.component';
-import { WorkComponent }      from './work/work.component';
+import { PlanComponent }      from './plan/plan.component';
 import { AddressComponent }   from './address/address.component';
 import { ResultComponent }    from './result/result.component';
 
@@ -26,7 +26,7 @@ import { WorkflowService }    from './workflow/workflow.service';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent, NavbarComponent, LocationComponent, WorkComponent, AddressComponent, ResultComponent ],
+    declarations: [ AppComponent, NavbarComponent, LocationComponent, PlanComponent, AddressComponent, ResultComponent ],
     bootstrap:    [ AppComponent ]
 })
 

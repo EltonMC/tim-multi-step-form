@@ -1,6 +1,6 @@
 export const STEPS = {
     location: 'location',
-    work: 'work',
+    plan: 'plan',
     address: 'address',
     result: 'result'
 }

@@ -9,7 +9,7 @@ export class FormDataService {
 
     private formData: FormData = new FormData();
     private isLocationFormValid = false;
-    private isWorkFormValid = false;
+    private isPlanFormValid = false;
     private isAddressFormValid = false;
 
     constructor(private workflowService: WorkflowService) {
@@ -35,17 +35,17 @@ export class FormDataService {
         this.workflowService.validateStep(STEPS.location);
     }
 
-    getWork(): string {
-        // Return the work type
-        return this.formData.work;
+    getPlan(): object {
+        // Return the plan type
+        return this.formData.plan;
     }
 
-    setWork(data: string) {
-        // Update the work type only when the Work Form had been validated successfully
-        this.isWorkFormValid = true;
-        this.formData.work = data;
+    setPlan(data) {
+        // Update the plan type only when the Plan Form had been validated successfully
+        this.isPlanFormValid = true;
+        this.formData.plan = data;
         // Validate Work Step in Workflow
-        this.workflowService.validateStep(STEPS.work);
+        this.workflowService.validateStep(STEPS.plan);
     }
 
     getAddress(): Address {
@@ -80,14 +80,14 @@ export class FormDataService {
         this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
         this.formData.clear();
-        this.isLocationFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
+        this.isLocationFormValid = this.isPlanFormValid = this.isAddressFormValid = false;
         return this.formData;
     }
 
     isFormValid() {
         // Return true if all forms had been validated successfully; otherwise, return false
         return this.isLocationFormValid &&
-                this.isWorkFormValid &&
+                this.isPlanFormValid &&
                 this.isAddressFormValid;
     }
 }

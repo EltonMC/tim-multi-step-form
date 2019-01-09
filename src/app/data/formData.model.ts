@@ -2,7 +2,7 @@ export class FormData {
     state: string = '';
     city: string = '';
     phone: string = '';
-    work: string = '';
+    plan = {};
     street: string = '';
     zip: string = '';
 
@@ -10,7 +10,7 @@ export class FormData {
         this.state = '';
         this.city = '';
         this.phone = '';
-        this.work = '';
+        this.plan = {};
         this.street = '';
         this.zip = '';
     }
