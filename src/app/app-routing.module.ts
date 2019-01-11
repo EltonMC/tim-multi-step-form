@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LocationComponent } from './location/location.component';
 import { PlanComponent } from './plan/plan.component';
-import { AddressComponent } from './address/address.component';
+import { PersonComponent } from './person/person.component';
 import { ResultComponent } from './result/result.component';
 
 import { WorkflowGuard } from './workflow/workflow-guard.service';
@@ -17,7 +17,7 @@ export const appRoutes: Routes = [
     // 2nd Route
     { path: 'plan',  component: PlanComponent, canActivate: [WorkflowGuard] },
     // 3rd Route
-    { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },
+    { path: 'person',  component: PersonComponent, canActivate: [WorkflowGuard] },
     // 4th Route
     { path: 'result',  component: ResultComponent, canActivate: [WorkflowGuard] },
     // 5th Route

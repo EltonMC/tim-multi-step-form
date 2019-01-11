@@ -43,8 +43,8 @@ export class PlanComponent implements OnInit {
 
     goToNext(form: any) {
         if (this.save(form)) {
-            // Navigate to the address page
-            this.router.navigate(['/address']);
+            // Navigate to the person page
+            this.router.navigate(['/person']);
         }
     }
 }

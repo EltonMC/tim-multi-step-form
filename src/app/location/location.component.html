@@ -11,7 +11,7 @@
                             <select class="form-control input-md" #firstname="ngModel" required id="state" name="state" type="text" [(ngModel)]="location.state" (change)="onChange($event)">
                               <option *ngFor="let state of states" value="{{ state.uf }}"> {{ state.name }} </option>
                             </select>
-                            <div class="alert alert-danger" [hidden]="!(firstname.invalid  && (firstname.dirty || firstname.touched))">Selecione um estado.</div>
+                            <!-- <div class="alert alert-danger" [hidden]="!(location.state.invalid  && (location.state.dirty || location.state.touched))">Selecione um estado.</div> -->
                         </div>
                     </div>
                     <div class='col-xs-12 col-sm-6'>
@@ -20,13 +20,14 @@
                             <select class="form-control input-md" #lastname="ngModel" required id="city" name="city" type="text" [(ngModel)]="location.city">
                               <option *ngFor="let city of cities" value="{{ city }}"> {{ city }} </option>
                             </select>
-                            <div class="alert alert-danger" [hidden]="!(lastname.invalid  && (lastname.dirty || lastname.touched))">Selecione uma cidade.</div>
+                            <!-- <div class="alert alert-danger" [hidden]="!(location.city.invalid  && (location.city.dirty || location.city.touched))">Selecione uma cidade.</div> -->
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="email">Celular*</label>
                     <input class="form-control input-md" #email="ngModel" required id="phone" name="phone" type="text" minlength="10" [(ngModel)]="location.phone" mask="(00) 00000-0000">
+                    <!-- <div class="alert alert-danger" [hidden]="!(location.phone.invalid  && (location.phone.dirty || location.phone.touched))">Selecione uma cidade.</div> -->
                 </div>
 
                 <div class="form-group text-center">

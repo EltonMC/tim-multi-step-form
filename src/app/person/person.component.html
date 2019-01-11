@@ -1,4 +1,4 @@
-<form #addressForm="ngForm" class="editForm" novalidate>
+<form #personForm="ngForm" class="editForm" novalidate>
   <div class="tab-pane fade in active">
     <h4 class="head text-center"> DADOS PESSOAIS </h4>
     <br />
@@ -8,16 +8,15 @@
           <div class="form-group">
             <label class="control-label" for="street">Nome Completo</label>
             <input class="form-control input-md" #street="ngModel" required id="name" name="name" type="text"
-              placeholder="Nome Completo" [(ngModel)]="address.name">
-            <div class="alert alert-danger" [hidden]="street.valid">O nome completo é obrigatório.</div>
+              placeholder="Nome Completo" [(ngModel)]="person.name">
           </div>
         </div>
         <div class='col-xs-12 col-sm-4'>
           <div class="form-group">
             <label class="control-label" for="street">CPF</label>
             <input class="form-control input-md" #street="ngModel" required id="cpf" name="cpf" type="text" placeholder="CPF"
-              [(ngModel)]="address.cpf">
-            <div class="alert alert-danger" [hidden]="street.valid">O CPF é obrigatório.</div>
+              [(ngModel)]="person.cpf" mask="000.000.000-00" minlength="11">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O CPF é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -28,16 +27,16 @@
           <div class="form-group">
             <label class="control-label" for="street">Email</label>
             <input class="form-control input-md" #street="ngModel" required id="email" name="email" type="email"
-              placeholder="Email" [(ngModel)]="address.email">
-            <div class="alert alert-danger" [hidden]="street.valid">O email completo é obrigatório.</div>
+              placeholder="Email" [(ngModel)]="person.email">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O email completo é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-4'>
           <div class="form-group">
             <label class="control-label" for="street">Data de Nascimento</label>
             <input class="form-control input-md" #street="ngModel" required id="birthday" name="birthday" type="text" placeholder="dd/mm/aaaa"
-              [(ngModel)]="address.birthday">
-            <div class="alert alert-danger" [hidden]="street.valid">A data de nascimento é obrigatória.</div>
+              [(ngModel)]="person.birthday" minlength="8" mask="00/00/0000">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A data de nascimento é obrigatória.</div> -->
           </div>
         </div>
       </div>
@@ -48,24 +47,24 @@
           <div class="form-group">
             <label class="control-label" for="street">RG</label>
             <input class="form-control input-md" #street="ngModel" required id="rg" name="rg" type="email"
-              placeholder="RG" [(ngModel)]="address.rg">
-            <div class="alert alert-danger" [hidden]="street.valid">O RG é obrigatório.</div>
+              placeholder="RG" [(ngModel)]="person.rg">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O RG é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
             <label class="control-label" for="street">Órgão expedidor</label>
             <input class="form-control input-md" #street="ngModel" required id="expe" name="expe" type="text" placeholder="Expedidor"
-              [(ngModel)]="address.expe">
-            <div class="alert alert-danger" [hidden]="street.valid">O órgão expedidor é obrigatório.</div>
+              [(ngModel)]="person.expe">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O órgão expedidor é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
             <label class="control-label" for="street">UF expedição</label>
             <input class="form-control input-md" #street="ngModel" required id="uf" name="uf" type="text" placeholder="UF"
-              [(ngModel)]="address.uf">
-            <div class="alert alert-danger" [hidden]="street.valid">A UF de expedição é obrigatória.</div>
+              [(ngModel)]="person.uf">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A UF de expedição é obrigatória.</div> -->
           </div>
         </div>
       </div>
@@ -76,24 +75,24 @@
           <div class="form-group">
             <label class="control-label" for="street">Nacionalidade</label>
             <input class="form-control input-md" #street="ngModel" required id="nasc" name="nasc" type="email"
-              placeholder="Nascionalidade" [(ngModel)]="address.nasc">
-            <div class="alert alert-danger" [hidden]="street.valid">A nascionalidade é obrigatória.</div>
+              placeholder="Nascionalidade" [(ngModel)]="person.nasc">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A nascionalidade é obrigatória.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
             <label class="control-label" for="street">Celular para contato</label>
             <input class="form-control input-md" #street="ngModel" required id="phone" name="phone" type="text" placeholder="(00) 00000-0000"
-              [(ngModel)]="address.phone">
-            <div class="alert alert-danger" [hidden]="street.valid">O celular para contato é obrigatório.</div>
+              [(ngModel)]="person.phone" minlength="11" mask="(00) 00000-0000">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O celular para contato é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
             <div class="form-group">
               <label class="control-label" for="street">Telefone para contato</label>
               <input class="form-control input-md" #street="ngModel" required id="phone_2" name="phone_2" type="text" placeholder="(00) 0000-0000"
-                [(ngModel)]="address.phone_2">
-              <div class="alert alert-danger" [hidden]="street.valid">O telefone para contato é obrigatório.</div>
+                [(ngModel)]="person.phone_2" minlength="11" mask="(00) 00000-0000">
+              <!-- <div class="alert alert-danger" [hidden]="street.valid">O telefone para contato é obrigatório.</div> -->
             </div>
           </div>
       </div>
@@ -104,8 +103,8 @@
           <div class="form-group">
             <label class="control-label" for="street">Nome completo da Mãe</label>
             <input class="form-control input-md" #street="ngModel" required id="mother" name="mother" type="text"
-              placeholder="Nome completo da Mãe" [(ngModel)]="address.mother">
-            <div class="alert alert-danger" [hidden]="street.valid">A nascionalidade é obrigatória.</div>
+              placeholder="Nome completo da Mãe" [(ngModel)]="person.mother">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A nascionalidade é obrigatória.</div> -->
           </div>
         </div>
       </div>
@@ -119,16 +118,16 @@
           <div class="form-group">
             <label class="control-label" for="street">CEP</label>
             <input class="form-control input-md" #street="ngModel" required id="cep" name="cep" type="text"
-              placeholder="00000-203" [(ngModel)]="address.cep">
-            <div class="alert alert-danger" [hidden]="street.valid">O CEP é obrigatório.</div>
+              placeholder="00000-203" [(ngModel)]="person.main_address.cep" minlength="8" mask="00000-000">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O CEP é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-8'>
           <div class="form-group">
             <label class="control-label" for="street">Rua</label>
             <input class="form-control input-md" #street="ngModel" required id="street" name="street" type="text" placeholder="Rua"
-              [(ngModel)]="address.street">
-            <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div>
+              [(ngModel)]="person.main_address.street">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div> -->
           </div>
         </div>
       </div>
@@ -139,24 +138,24 @@
           <div class="form-group">
             <label class="control-label" for="street">Bairro</label>
             <input class="form-control input-md" #street="ngModel" required id="district" name="district" type="text"
-              placeholder="Bairro" [(ngModel)]="address.district">
-            <div class="alert alert-danger" [hidden]="street.valid">O bairro é obrigatório.</div>
+              placeholder="Bairro" [(ngModel)]="person.main_address.district">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O bairro é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-6'>
           <div class="form-group">
             <label class="control-label" for="street">Cidade</label>
             <input class="form-control input-md" #street="ngModel" required id="city" name="city" type="text" placeholder="Cidade"
-              [(ngModel)]="address.city">
-            <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div>
+              [(ngModel)]="person.main_address.city">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-2'>
           <div class="form-group">
             <label class="control-label" for="street">Estado</label>
             <input class="form-control input-md" #street="ngModel" required id="state" name="state" type="text" placeholder="Estado"
-              [(ngModel)]="address.state">
-            <div class="alert alert-danger" [hidden]="street.valid">O estado é obrigatório.</div>
+              [(ngModel)]="person.main_address.state">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O estado é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -167,16 +166,16 @@
           <div class="form-group">
             <label class="control-label" for="street">Número</label>
             <input class="form-control input-md" #street="ngModel" required id="number" name="number" type="text"
-              placeholder="Número" [(ngModel)]="address.number">
-            <div class="alert alert-danger" [hidden]="street.valid">O número é obrigatório.</div>
+              placeholder="Número" [(ngModel)]="person.main_address.number">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O número é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-8'>
           <div class="form-group">
             <label class="control-label" for="street">Complemento</label>
             <input class="form-control input-md" #street="ngModel" required id="complement" name="complement" type="text" placeholder="Complemento"
-              [(ngModel)]="address.complement">
-            <div class="alert alert-danger" [hidden]="street.valid">O complemento é obrigatório.</div>
+              [(ngModel)]="person.main_address.complement">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O complemento é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -187,8 +186,8 @@
           <div class="form-group">
             <label class="control-label" for="street">Ponto de referência</label>
             <input class="form-control input-md" #street="ngModel" required id="ref" name="ref" type="text"
-              placeholder="Ponto de referência" [(ngModel)]="address.ref">
-            <div class="alert alert-danger" [hidden]="street.valid">O ponto de referência é obrigatório.</div>
+              placeholder="Ponto de referência" [(ngModel)]="person.main_address.ref">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O ponto de referência é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -201,7 +200,7 @@
             <div class="form-group">
                 <div class="radio">
                     <label>
-                        <input type="radio" #work="ngModel" required name="plan" [(ngModel)]="address.t" value="true">
+                        <input type="radio" #work="ngModel" required name="plan" [(ngModel)]="person.t" value="true">
                         <strong> Meu endereço de faturamento é o mesmo da instalação </strong>
                       </label>
                 </div>
@@ -214,16 +213,16 @@
           <div class="form-group">
             <label class="control-label" for="street">CEP</label>
             <input class="form-control input-md" #street="ngModel" required id="cep" name="cep" type="text"
-              placeholder="00000-203" [(ngModel)]="address.cep">
-            <div class="alert alert-danger" [hidden]="street.valid">O CEP é obrigatório.</div>
+              placeholder="00000-203" [(ngModel)]="person.aux_address.cep" minlength="8" mask="00000-000">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O CEP é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-8'>
           <div class="form-group">
             <label class="control-label" for="street">Rua</label>
             <input class="form-control input-md" #street="ngModel" required id="street" name="street" type="text" placeholder="Rua"
-              [(ngModel)]="address.street">
-            <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div>
+              [(ngModel)]="person.aux_address.street">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div> -->
           </div>
         </div>
       </div>
@@ -234,24 +233,24 @@
           <div class="form-group">
             <label class="control-label" for="street">Bairro</label>
             <input class="form-control input-md" #street="ngModel" required id="district" name="district" type="text"
-              placeholder="Bairro" [(ngModel)]="address.district">
-            <div class="alert alert-danger" [hidden]="street.valid">O bairro é obrigatório.</div>
+              placeholder="Bairro" [(ngModel)]="person.aux_address.district">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O bairro é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-6'>
           <div class="form-group">
             <label class="control-label" for="street">Cidade</label>
             <input class="form-control input-md" #street="ngModel" required id="city" name="city" type="text" placeholder="Cidade"
-              [(ngModel)]="address.city">
-            <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div>
+              [(ngModel)]="person.aux_address.city">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">A rua é obrigatória.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-2'>
           <div class="form-group">
             <label class="control-label" for="street">Estado</label>
             <input class="form-control input-md" #street="ngModel" required id="state" name="state" type="text" placeholder="Estado"
-              [(ngModel)]="address.state">
-            <div class="alert alert-danger" [hidden]="street.valid">O estado é obrigatório.</div>
+              [(ngModel)]="person.aux_address.state">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O estado é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -262,16 +261,16 @@
           <div class="form-group">
             <label class="control-label" for="street">Número</label>
             <input class="form-control input-md" #street="ngModel" required id="number" name="number" type="text"
-              placeholder="Número" [(ngModel)]="address.number">
-            <div class="alert alert-danger" [hidden]="street.valid">O número é obrigatório.</div>
+              placeholder="Número" [(ngModel)]="person.aux_address.number">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O número é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-8'>
           <div class="form-group">
             <label class="control-label" for="street">Complemento</label>
             <input class="form-control input-md" #street="ngModel" required id="complement" name="complement" type="text" placeholder="Complemento"
-              [(ngModel)]="address.complement">
-            <div class="alert alert-danger" [hidden]="street.valid">O complemento é obrigatório.</div>
+              [(ngModel)]="person.aux_address.complement">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O complemento é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -282,8 +281,8 @@
           <div class="form-group">
             <label class="control-label" for="street">Ponto de referência</label>
             <input class="form-control input-md" #street="ngModel" required id="ref" name="ref" type="text"
-              placeholder="Ponto de referência" [(ngModel)]="address.ref">
-            <div class="alert alert-danger" [hidden]="street.valid">O ponto de referência é obrigatório.</div>
+              placeholder="Ponto de referência" [(ngModel)]="person.aux_address.ref">
+            <!-- <div class="alert alert-danger" [hidden]="street.valid">O ponto de referência é obrigatório.</div> -->
           </div>
         </div>
       </div>
@@ -293,7 +292,7 @@
             <div class="form-group">
                 <div class="radio">
                     <label>
-                        <input type="radio" #work="ngModel" required name="plan" [(ngModel)]="address.regulamento" value="true">
+                        <input type="radio" #work="ngModel" required name="plan" [(ngModel)]="person.regulamento" value="true">
                         Li e concordo com o Contrato de Permanência TIM Live Internet, Instrumento de Contrato Tim Live Internet e autorizo a TIM entrar em contato comigo no telefones informados.
                     </label>
                 </div>
@@ -302,9 +301,9 @@
     </div>
     <div class='row'>
       <div class="form-group text-center">
-        <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(addressForm)"> <span style="margin-right:10px;"
+        <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(personForm)"> <span style="margin-right:10px;"
             class="glyphicon glyphicon-arrow-left"></span> Previous</button>
-        <button class="btn btn-outline-rounded btn-info" [disabled]="!addressForm.valid" (click)="goToNext(addressForm)">
+        <button class="btn btn-outline-rounded btn-info" [disabled]="!personForm.valid" (click)="goToNext(personForm)">
           Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
     </div>

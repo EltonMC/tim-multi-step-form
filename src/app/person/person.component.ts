@@ -1,25 +1,26 @@
-import { Component, OnInit }   from '@angular/core';
-import { Router }              from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { Address }             from '../data/formData.model';
-import { FormDataService }     from '../data/formData.service';
+import { Person } from '../data/formData.model';
+import { FormDataService } from '../data/formData.service';
 
 @Component ({
-    selector:     'mt-wizard-address'
-    ,templateUrl: './address.component.html'
+    // tslint:disable-next-line:component-selector
+    selector:     'mt-wizard-person',
+    templateUrl: './person.component.html'
 })
 
-export class AddressComponent implements OnInit {
+export class PersonComponent implements OnInit {
     // title = 'Where do you live?';
-    address: Address;
+    person: Person;
     form: any;
 
     constructor(private router: Router, private formDataService: FormDataService) {
     }
 
     ngOnInit() {
-        this.address = this.formDataService.getAddress();
-        console.log('Address feature loaded!');
+        this.person = this.formDataService.getPerson();
+        console.log('Person feature loaded!');
     }
 
     save(form: any): boolean {
@@ -27,7 +28,7 @@ export class AddressComponent implements OnInit {
             return false;
         }
 
-        this.formDataService.setAddress(this.address);
+        this.formDataService.setPerson(this.person);
         return true;
     }
 
