@@ -16,6 +16,7 @@ import fourG from '../../assets/data/4g-tim.json';
 export class LocationComponent implements OnInit {
     title = 'Verifique nossa disponibilidade';
     location: Location;
+    flagLocation: boolean = false;
     states: any;
     cities = [];
     form: any;
@@ -45,11 +46,14 @@ export class LocationComponent implements OnInit {
     }
 
     save(form: any): boolean {
+        // tslint:disable-next-line:curly
+        // tslint:disable-next-line:max-line-length
+        fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
         if (!form.valid) {
           return false;
-        // tslint:disable-next-line:curly
-        }else if (!fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) return true; })){
-          console.log('4g!');
+        }else if (!this.flagLocation){
+          this.flagLocation = true;
+          return false;
         }
 
         this.formDataService.setLocation(this.location);

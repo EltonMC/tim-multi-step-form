@@ -18,11 +18,13 @@ import { AppRoutingModule }   from './app-routing.module';
 /* Shared Service */
 import { FormDataService }    from './data/formData.service';
 import { WorkflowService }    from './workflow/workflow.service';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
     imports:      [ BrowserModule,
                     FormsModule,
-                    AppRoutingModule
+                    AppRoutingModule,
+                    NgxMaskModule.forRoot()
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
