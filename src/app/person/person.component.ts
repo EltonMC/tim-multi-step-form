@@ -1,3 +1,4 @@
+import { EmailService } from './../services/email.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,7 +16,7 @@ export class PersonComponent implements OnInit {
     person: Person;
     form: any;
 
-    constructor(private router: Router, private formDataService: FormDataService) {
+    constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
     }
 
     ngOnInit() {
@@ -40,9 +41,26 @@ export class PersonComponent implements OnInit {
     }
 
     goToNext(form: any) {
+
+        const body =
+          '<h1> Dados do formulario: </h1>' +
+          '<h3> Dados do cliente: </h3>' +
+          '<p> Nome Completo:' + this.person.name + '<?p>' +
+          '<p> CPF: ' + this.person.cpf + '<?p>' +
+          '<p> Email: ' + this.person.email + '<?p>' +
+          '<p> Dada de Nascimento: ' + this.person.birthday + '<?p>' +
+          '<p> RG:' + this.person.rg + '<?p>' +
+          '<p> Orgão expedidor: ' + this.person.expe + '<?p>' +
+          '<p> UF expedição:' + this.person.uf + '<?p>' +
+          '<p> Nascionalidade:' + this.person.nasc + '<?p>' +
+          '<p> Celular: ' + this.person.phone + '<?p>' +
+          '<p> Telefone: ' + this.person.phone_2 + '<?p>' +
+          '<p> Nome da Mãe:' + this.person.mother;
         if (this.save(form)) {
-            // Navigate to the result page
-            this.router.navigate(['/result']);
+            this.emailService.send('[TIM] Contrate Agora', body).subscribe(res => {
+              // Navigate to the result page
+              this.router.navigate(['/result']);
+            }, err => {});
         }
     }
 }

@@ -1,3 +1,4 @@
+import { EmailService } from './../services/email.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -21,7 +22,7 @@ export class LocationComponent implements OnInit {
     cities = [];
     form: any;
 
-    constructor(private router: Router, private formDataService: FormDataService) {
+    constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
       this.states = Brazil.states;
     }
 
@@ -61,9 +62,17 @@ export class LocationComponent implements OnInit {
     }
 
     goToNext(form: any) {
+      const body =
+      '<h1> Dados do formulario: </h1>' +
+      '<h3> Dados do cliente: </h3>' +
+      '<p> Celular: ' + this.location.phone + '<?p>' +
+      '<p> Estado: ' + this.location.state + '<?p>' +
+      '<p> Cidade: ' + this.location.city + '<?p>';
+      this.emailService.send('[TIM] Disponibilidade ', body).subscribe(res => {
         if (this.save(form)) {
-            // Navigate to the plan page
-            this.router.navigate(['/plan']);
+          // Navigate to the plan page
+          this.router.navigate(['/plan']);
         }
+      }, err => {});
     }
 }

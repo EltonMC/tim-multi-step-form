@@ -9,10 +9,10 @@ import { FormDataService }            from '../data/formData.service';
 })
 
 export class ResultComponent implements OnInit {
-    title = 'Thanks for staying tuned!';
+    title = 'Obrigado pela preferência!';
     @Input() formData: FormData;
     isFormValid: boolean = false;
-    
+
     constructor(private formDataService: FormDataService) {
     }
 
