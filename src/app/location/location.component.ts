@@ -17,7 +17,7 @@ import fourG from '../../assets/data/4g-tim.json';
 export class LocationComponent implements OnInit {
     title = 'Verifique nossa disponibilidade';
     location: Location;
-    flagLocation: boolean = false;
+    flagLocation = false;
     states: any;
     cities = [];
     form: any;

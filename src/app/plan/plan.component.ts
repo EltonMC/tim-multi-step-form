@@ -12,17 +12,16 @@ import Plans from '../../assets/data/plans.json';
 
 export class PlanComponent implements OnInit {
     title = 'SELECIONE UM PLANO';
-    plans: object = {};
+    plans: any;
     plan = {};
     form: any;
 
     constructor(private router: Router, private formDataService: FormDataService) {
+      this.plans = Plans;
     }
 
     ngOnInit() {
-        this.plans = Plans;
         this.plan = this.formDataService.getPlan();
-        console.log('Plan feature loaded!');
     }
 
     save(form: any): boolean {

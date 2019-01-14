@@ -6,17 +6,16 @@
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
         <div class='col-xs-12 col-sm-8'>
           <div class="form-group">
-            <label class="control-label" for="street">Nome Completo</label>
-            <input class="form-control input-md" #street="ngModel" required id="name" name="name" type="text"
-              placeholder="Nome Completo" [(ngModel)]="person.name">
+            <label class="control-label">Nome Completo</label>
+            <input class="form-control input-md" required id="name" name="name" type="text" placeholder="Nome Completo"
+              [(ngModel)]="person.name">
           </div>
         </div>
         <div class='col-xs-12 col-sm-4'>
           <div class="form-group">
-            <label class="control-label" for="street">CPF</label>
-            <input class="form-control input-md" #street="ngModel" required id="cpf" name="cpf" type="text" placeholder="CPF"
-              [(ngModel)]="person.cpf" mask="000.000.000-00" minlength="11">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">O CPF é obrigatório.</div> -->
+            <label class="control-label">CPF</label>
+            <input class="form-control input-md" required id="cpf" name="cpf" type="text" placeholder="CPF" [(ngModel)]="person.cpf"
+              mask="000.000.000-00" minlength="11">
           </div>
         </div>
       </div>
@@ -25,18 +24,16 @@
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
         <div class='col-xs-12 col-sm-8'>
           <div class="form-group">
-            <label class="control-label" for="street">Email</label>
-            <input class="form-control input-md" #street="ngModel" required id="email" name="email" type="email"
-              placeholder="Email" [(ngModel)]="person.email">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">O email completo é obrigatório.</div> -->
+            <label class="control-label">Email</label>
+            <input class="form-control input-md" required id="email" name="email" type="email" placeholder="Email"
+              [(ngModel)]="person.email">
           </div>
         </div>
         <div class='col-xs-12 col-sm-4'>
           <div class="form-group">
-            <label class="control-label" for="street">Data de Nascimento</label>
-            <input class="form-control input-md" #street="ngModel" required id="birthday" name="birthday" type="text" placeholder="dd/mm/aaaa"
+            <label class="control-label">Data de Nascimento</label>
+            <input class="form-control input-md" required id="birthday" name="birthday" type="text" placeholder="dd/mm/aaaa"
               [(ngModel)]="person.birthday" minlength="8" mask="00/00/0000">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">A data de nascimento é obrigatória.</div> -->
           </div>
         </div>
       </div>
@@ -45,26 +42,24 @@
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
         <div class='col-xs-12 col-sm-6'>
           <div class="form-group">
-            <label class="control-label" for="street">RG</label>
-            <input class="form-control input-md" #street="ngModel" required id="rg" name="rg" type="email"
-              placeholder="RG" [(ngModel)]="person.rg">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">O RG é obrigatório.</div> -->
+            <label class="control-label">RG</label>
+            <input class="form-control input-md" required id="rg" name="rg" type="text" placeholder="RG" [(ngModel)]="person.rg">
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
-            <label class="control-label" for="street">Órgão expedidor</label>
-            <input class="form-control input-md" #street="ngModel" required id="expe" name="expe" type="text" placeholder="Expedidor"
+            <label class="control-label">Órgão expedidor</label>
+            <input class="form-control input-md" required id="expe" name="expe" type="text" placeholder="Expedidor"
               [(ngModel)]="person.expe">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">O órgão expedidor é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
-            <label class="control-label" for="street">UF expedição</label>
-            <input class="form-control input-md" #street="ngModel" required id="uf" name="uf" type="text" placeholder="UF"
-              [(ngModel)]="person.uf">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">A UF de expedição é obrigatória.</div> -->
+            <label class="control-label">Estado*</label>
+            <select class="form-control input-md" required id="uf" name="uf" type="text" [(ngModel)]="person.uf">
+              <option *ngFor="let state of states" value="{{ state.uf }}"> {{ state.name }} </option>
+            </select>
+            <!-- <div class="alert alert-danger" [hidden]="!(location.state.invalid  && (location.state.dirty || location.state.touched))">Selecione um estado.</div> -->
           </div>
         </div>
       </div>
@@ -73,49 +68,235 @@
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
         <div class='col-xs-12 col-sm-6'>
           <div class="form-group">
-            <label class="control-label" for="street">Nacionalidade</label>
-            <input class="form-control input-md" #street="ngModel" required id="nasc" name="nasc" type="email"
-              placeholder="Nascionalidade" [(ngModel)]="person.nasc">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">A nascionalidade é obrigatória.</div> -->
+            <label class="control-label">Nacionalidade</label>
+            <input class="form-control input-md" required id="nasc" name="nasc" type="text" placeholder="Nascionalidade"
+              [(ngModel)]="person.nasc">
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
-            <label class="control-label" for="street">Celular para contato</label>
-            <input class="form-control input-md" #street="ngModel" required id="phone" name="phone" type="text" placeholder="(00) 00000-0000"
+            <label class="control-label">Celular para contato</label>
+            <input class="form-control input-md" required id="phone" name="phone" type="text" placeholder="(00) 00000-0000"
               [(ngModel)]="person.phone" minlength="11" mask="(00) 00000-0000">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">O celular para contato é obrigatório.</div> -->
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
-            <div class="form-group">
-              <label class="control-label" for="street">Telefone para contato</label>
-              <input class="form-control input-md" #street="ngModel" required id="phone_2" name="phone_2" type="text" placeholder="(00) 0000-0000"
-                [(ngModel)]="person.phone_2" minlength="11" mask="(00) 00000-0000">
-              <!-- <div class="alert alert-danger" [hidden]="street.valid">O telefone para contato é obrigatório.</div> -->
-            </div>
+          <div class="form-group">
+            <label class="control-label">Telefone para contato</label>
+            <input class="form-control input-md" id="phone_2" name="phone_2" type="text" placeholder="(00) 0000-0000"
+              [(ngModel)]="person.phone_2" mask="(00) 00000-0000">
           </div>
+        </div>
       </div>
     </div>
     <div class='row'>
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
         <div class='col-xs-12 col-sm-12'>
           <div class="form-group">
-            <label class="control-label" for="street">Nome completo da Mãe</label>
-            <input class="form-control input-md" #street="ngModel" required id="mother" name="mother" type="text"
-              placeholder="Nome completo da Mãe" [(ngModel)]="person.mother">
-            <!-- <div class="alert alert-danger" [hidden]="street.valid">A nascionalidade é obrigatória.</div> -->
+            <label class="control-label">Nome completo da Mãe</label>
+            <input class="form-control input-md" required id="mother" name="mother" type="text" placeholder="Nome completo da Mãe"
+              [(ngModel)]="person.mother">
           </div>
         </div>
       </div>
     </div>
-
+    <br />
+    <h4 class="head text-center"> ENDEREÇO </h4>
+    <br />
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-4'>
+          <div class="form-group">
+            <label class="control-label">CEP</label>
+            <input class="form-control input-md" required name="mainCep" type="text" minlength="8" placeholder="00000-000"
+              mask="00000-000" [(ngModel)]="mainAddress.cep">
+          </div>
+        </div>
+        <div class='col-xs-12 col-sm-8'>
+          <div class="form-group">
+            <label class="control-label">Rua</label>
+            <input class="form-control input-md" required name="mainStreet" type="text" placeholder="Rua" [(ngModel)]="mainAddress.street">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-4'>
+          <div class="form-group">
+            <label class="control-label">Bairro</label>
+            <input class="form-control input-md" required name="mainDistrict" type="text" placeholder="Bairro"
+              [(ngModel)]="mainAddress.district">
+          </div>
+        </div>
+        <div class='col-xs-12 col-sm-6'>
+          <div class="form-group">
+            <label class="control-label">Cidade</label>
+            <input class="form-control input-md" required name="mainCity" type="text" placeholder="Cidade" [(ngModel)]="mainAddress.city">
+          </div>
+        </div>
+        <div class='col-xs-12 col-sm-2'>
+          <div class="form-group">
+            <label class="control-label">Estado</label>
+            <input class="form-control input-md" type="text" name="mainState" placeholder="Estado" [(ngModel)]="mainAddress.state">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-4'>
+          <div class="form-group">
+            <label class="control-label">Número</label>
+            <input class="form-control input-md" required name="mainNumber" type="text" placeholder="Número"
+              [(ngModel)]="mainAddress.number">
+          </div>
+        </div>
+        <div class='col-xs-12 col-sm-8'>
+          <div class="form-group">
+            <label class="control-label">Complemento</label>
+            <input class="form-control input-md" type="text" name="mainComplement" placeholder="Complemento"
+              [(ngModel)]="mainAddress.complement">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-12'>
+          <div class="form-group">
+            <label class="control-label">Ponto de referência</label>
+            <input class="form-control input-md" type="text" name="mainRef" placeholder="Ponto de referência"
+              [(ngModel)]="mainAddress.ref">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-12'>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="flagAddress" [(ngModel)]="flagAddress" value="false">
+                <strong> Meu endereço de faturamento é diferente do endereço de instalação.</strong>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="flagAddress">
+      <br />
+      <h4 class="head text-center"> ENDEREÇO DE INSTALAÇÃO </h4>
+      <br />
+      <div class='row'>
+        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+          <div class='col-xs-12 col-sm-4'>
+            <div class="form-group">
+              <label class="control-label">CEP</label>
+              <input class="form-control input-md" required name="auxCep" type="text" minlength="8" placeholder="00000-000"
+                mask="00000-000" [(ngModel)]="auxAddress.cep">
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-8'>
+            <div class="form-group">
+              <label class="control-label">Rua</label>
+              <input class="form-control input-md" required name="auxStreet" type="text" placeholder="Rua" [(ngModel)]="auxAddress.street">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+          <div class='col-xs-12 col-sm-4'>
+            <div class="form-group">
+              <label class="control-label">Bairro</label>
+              <input class="form-control input-md" required name="auxDistrict" type="text" placeholder="Bairro"
+                [(ngModel)]="auxAddress.district">
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label">Cidade</label>
+              <input class="form-control input-md" required name="auxCity" type="text" placeholder="Cidade"
+                [(ngModel)]="auxAddress.city">
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label">Estado</label>
+              <input class="form-control input-md" type="text" name="auxState" placeholder="Estado" [(ngModel)]="auxAddress.state">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+          <div class='col-xs-12 col-sm-4'>
+            <div class="form-group">
+              <label class="control-label">Número</label>
+              <input class="form-control input-md" required name="auxNumber" type="text" placeholder="Número"
+                [(ngModel)]="auxAddress.number">
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-8'>
+            <div class="form-group">
+              <label class="control-label">Complemento</label>
+              <input class="form-control input-md" type="text" name="auxComplement" placeholder="Complemento"
+                [(ngModel)]="auxAddress.complement">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label class="control-label">Ponto de referência</label>
+              <input class="form-control input-md" type="text" name="auxRef" placeholder="Ponto de referência"
+                [(ngModel)]="auxAddress.ref">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-12'>
+          <div class="form-group">
+            <label class="control-label">Selecione a data de vencimento da fatura</label>
+            <select class="form-control input-md" required id="dateEnd" name="dateEnd" type="text" [(ngModel)]="dateEnd">
+                <option value="07"> 07 </option>
+                <option value="10"> 10 </option>
+                <option value="12"> 12 </option>
+                <option value="15"> 15 </option>
+                <option value="20"> 20 </option>
+                <option value="25"> 25 </option>
+              </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        <div class='col-xs-12 col-sm-12'>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" required name="terms" value="false">
+                <strong> Li e concordo com o Contrato de Permanência TIM Live, Instrumento de Comodato TIM Live e autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class='row'>
       <div class="form-group text-center">
         <button class="btn btn-outline-rounded btn-success" [disabled]="!personForm.valid" (click)="goToNext(personForm)">
           Continuar <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
     </div>
-
   </div>
 </form>

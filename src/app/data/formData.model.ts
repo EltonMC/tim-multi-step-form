@@ -1,57 +1,67 @@
 export class FormData {
-    state: string = '';
-    city: string = '';
-    phone: string = '';
+    state = '';
+    city = '';
+    phone = '';
     plan = {};
-    name: string = '';
-    cpf: string = '';
-    email: string = '';
-    birthday: string = '';
-    rg: string = '';
-    expe: string = '';
-    uf: string = '';
-    nasc: string = '';
-    phone_2: string = '';
-    mother: string = '';
-    main_address: Address;
-    aux_address: Address;
+    name = '';
+    cpf = '';
+    email = '';
+    birthday = '';
+    rg = '';
+    expe = '';
+    uf = '';
+    nasc = '';
+    phone_2 = '';
+    mother = '';
+    mainAddress: Address = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
+    auxAddress: Address  = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
     clear() {
-       this.state = '';
-        this.city = '';
-        this.phone = '';
-        this.plan = {};
+      this.state = '';
+      this.city = '';
+      this.phone = '';
+      this.plan = {};
+      this.name = '';
+      this.cpf = '';
+      this.email = '';
+      this.birthday = '';
+      this.rg = '';
+      this.expe = '';
+      this.uf = '';
+      this.nasc = '';
+      this.phone_2 = '';
+      this.mother = '';
+      this.mainAddress = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
+      this.auxAddress = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
     }
 }
 
 export class Location {
-    state: string = '';
-    city: string = '';
-    phone: string = '';
+    state = '';
+    city = '';
+    phone = '';
 }
 
 export class Person {
-    name: string = '';
-    cpf: string = '';
-    email: string = '';
-    birthday: string = '';
-    rg: string = '';
-    expe: string = '';
-    uf: string = '';
-    nasc: string = '';
-    phone: string = '';
-    phone_2: string = '';
-    mother: string = '';
-    main_address: Address;
-    aux_address: Address;
+    name = '';
+    cpf = '';
+    email = '';
+    birthday = '';
+    rg = '';
+    expe = '';
+    uf = '';
+    nasc = '';
+    phone = '';
+    phone_2 = '';
+    mother = '';
 }
 
 export class Address {
-    cep: string = '';
-    street: string = '';
-    district: string = '';
-    city: string = '';
-    state: string = '';
-    number: string = '';
-    complement: string = '';
-    ref: string = '';
+    cep = '';
+    street = '';
+    district = '';
+    city = '';
+    state = '';
+    number = '';
+    complement = '';
+    ref = '';
 }
