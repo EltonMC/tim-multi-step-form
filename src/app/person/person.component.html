@@ -14,7 +14,7 @@
         <div class='col-xs-12 col-sm-4'>
           <div class="form-group">
             <label class="control-label">CPF</label>
-            <input class="form-control input-md" required id="cpf" name="cpf" type="text" placeholder="CPF" [(ngModel)]="person.cpf"
+            <input class="form-control input-md" required id="cpf" name="cpf" type="text" placeholder="CPF" [(ngModel)]="person.cpf" [cpf]="person.cpf"
               mask="000.000.000-00" minlength="11">
           </div>
         </div>
@@ -69,8 +69,10 @@
         <div class='col-xs-12 col-sm-6'>
           <div class="form-group">
             <label class="control-label">Nacionalidade</label>
-            <input class="form-control input-md" required id="nasc" name="nasc" type="text" placeholder="Nascionalidade"
-              [(ngModel)]="person.nasc">
+            <select class="form-control input-md" required id="nasc" name="nasc" type="text" [(ngModel)]="person.nasc">
+              <option value="brasileiro"> Brasileiro </option>
+              <option value="estrangeiro"> Estrangeiro </option>
+            </select>
           </div>
         </div>
         <div class='col-xs-12 col-sm-3'>
@@ -226,7 +228,7 @@
           <div class='col-xs-12 col-sm-2'>
             <div class="form-group">
               <label class="control-label">Estado</label>
-              <input class="form-control input-md" type="text" name="auxState" placeholder="Estado" [(ngModel)]="auxAddress.state">
+              <input class="form-control input-md" required type="text" name="auxState" placeholder="Estado" [(ngModel)]="auxAddress.state">
             </div>
           </div>
         </div>
@@ -256,37 +258,6 @@
               <label class="control-label">Ponto de referência</label>
               <input class="form-control input-md" type="text" name="auxRef" placeholder="Ponto de referência"
                 [(ngModel)]="auxAddress.ref">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
-        <div class='col-xs-12 col-sm-12'>
-          <div class="form-group">
-            <label class="control-label">Selecione a data de vencimento da fatura</label>
-            <select class="form-control input-md" required id="dateEnd" name="dateEnd" type="text" [(ngModel)]="dateEnd">
-                <option value="07"> 07 </option>
-                <option value="10"> 10 </option>
-                <option value="12"> 12 </option>
-                <option value="15"> 15 </option>
-                <option value="20"> 20 </option>
-                <option value="25"> 25 </option>
-              </select>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
-        <div class='col-xs-12 col-sm-12'>
-          <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" required name="terms" value="false">
-                <strong> Li e concordo com o Contrato de Permanência TIM Live, Instrumento de Comodato TIM Live e autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
-              </label>
             </div>
           </div>
         </div>
