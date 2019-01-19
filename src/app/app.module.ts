@@ -12,6 +12,7 @@ import { LocationComponent } from './location/location.component';
 import { PlanComponent } from './plan/plan.component';
 import { PersonComponent } from './person/person.component';
 import { ResultComponent } from './result/result.component';
+import { CpfCnpjModule } from 'ng2-cpf-cnpj';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
@@ -21,19 +22,21 @@ import { FormDataService } from './data/formData.service';
 import { WorkflowService } from './workflow/workflow.service';
 import { NgxMaskModule } from 'ngx-mask';
 import { EmailService } from './services/email.service';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
     imports:      [ BrowserModule,
                     FormsModule,
                     AppRoutingModule,
                     HttpClientModule,
+                    CpfCnpjModule,
                     NgxMaskModule.forRoot()
                   ],
     providers:    [
       { provide: EmailService, useClass: EmailService },
       { provide: FormDataService, useClass: FormDataService },
       { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent, NavbarComponent, LocationComponent, PlanComponent, PersonComponent, ResultComponent ],
+    declarations: [ AppComponent, NavbarComponent, LocationComponent, PlanComponent, PersonComponent, ResultComponent, PaymentComponent ],
     bootstrap:    [ AppComponent ]
 })
 

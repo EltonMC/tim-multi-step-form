@@ -8,7 +8,7 @@ export class WorkflowService {
         { step: STEPS.location, valid: false },
         { step: STEPS.plan, valid: false },
         { step: STEPS.person, valid: false },
-        { step: STEPS.result, valid: false }
+        { step: STEPS.payment, valid: false }
     ];
 
     validateStep(step: string) {

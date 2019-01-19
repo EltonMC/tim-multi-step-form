@@ -5,6 +5,7 @@ import { LocationComponent } from './location/location.component';
 import { PlanComponent } from './plan/plan.component';
 import { PersonComponent } from './person/person.component';
 import { ResultComponent } from './result/result.component';
+import { PaymentComponent } from './payment/payment.component';
 
 import { WorkflowGuard } from './workflow/workflow-guard.service';
 import { WorkflowService } from './workflow/workflow.service';
@@ -19,7 +20,7 @@ export const appRoutes: Routes = [
     // 3rd Route
     { path: 'person',  component: PersonComponent, canActivate: [WorkflowGuard] },
     // 4th Route
-    { path: 'result',  component: ResultComponent, canActivate: [WorkflowGuard] },
+    { path: 'payment',  component: PaymentComponent, canActivate: [WorkflowGuard] },
     // 5th Route
     { path: '',   redirectTo: '/location', pathMatch: 'full' },
     // 6th Route

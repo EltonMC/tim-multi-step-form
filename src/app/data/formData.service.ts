@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { FormData, Location, Person, Address } from './formData.model';
+import { FormData, Location, Person, Address, Bank } from './formData.model';
 import { WorkflowService } from '../workflow/workflow.service';
 import { STEPS } from '../workflow/workflow.model';
 
@@ -129,6 +129,19 @@ export class FormDataService {
     };
     return auxAddress;
   }
+
+  getBank(): Bank {
+    // Return the Person data
+    const bank: Bank = {
+      name: this.formData.bank.name,
+      cpf: this.formData.bank.cpf,
+      agency: this.formData.bank.agency,
+      bank: this.formData.bank.bank,
+      account: this.formData.bank.account,
+    };
+    return bank;
+  }
+
 
   setAuxAddress(data: Address) {
     // Update the Person data only when the Person Form had been validated successfully

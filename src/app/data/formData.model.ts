@@ -15,6 +15,7 @@ export class FormData {
     mother = '';
     mainAddress: Address = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
     auxAddress: Address  = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
+    bank: Bank = {'account': '', 'agency': '', 'bank': '', 'cpf': '', 'name': ''};
     clear() {
       this.state = '';
       this.city = '';
@@ -64,4 +65,13 @@ export class Address {
     number = '';
     complement = '';
     ref = '';
+}
+
+export class Bank {
+  name = '';
+  bank = '';
+  account = '';
+  cpf = '';
+  agency = '';
+
 }

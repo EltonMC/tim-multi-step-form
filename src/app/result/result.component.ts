@@ -1,11 +1,11 @@
-import { Component, OnInit, Input }   from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { FormData }                   from '../data/formData.model';
-import { FormDataService }            from '../data/formData.service';
+import { FormData } from '../data/formData.model';
+import { FormDataService } from '../data/formData.service';
 
 @Component ({
-    selector:     'mt-wizard-result'
-    ,templateUrl: './result.component.html'
+    selector:     'mt-wizard-result',
+    templateUrl: './result.component.html'
 })
 
 export class ResultComponent implements OnInit {
