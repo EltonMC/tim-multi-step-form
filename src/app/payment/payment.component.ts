@@ -24,6 +24,7 @@ export class PaymentComponent implements OnInit {
     typePayment = false;
     banks: any;
     form: any;
+    end = false;
 
     constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
       this.banks = Banks;
@@ -89,8 +90,7 @@ export class PaymentComponent implements OnInit {
         '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>';
       if (this.save(form)) {
           this.emailService.send('[TIM] Contrate Agora', body).subscribe(res => {
-            // Navigate to the result page
-            // this.router.navigate(['/payment']);
+            this.end = true;
           }, err => {});
       }
     }

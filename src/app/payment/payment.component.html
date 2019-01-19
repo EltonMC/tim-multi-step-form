@@ -1,4 +1,4 @@
-<form #pamentForm="ngForm" class="editForm" novalidate>
+<form #pamentForm="ngForm" class="editForm" novalidate [hidden]="end">
   <div class="tab-pane fade in active">
     <h4 class="head text-center">{{title}}</h4>
     <br />
@@ -113,7 +113,7 @@
             <div class="form-group">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" required name="terms" value="false">
+                  <input type="checkbox" required name="terms" value="false" [(ngModel)]="terms">
                   <strong> Li e concordo com o Contrato de Permanência TIM Live, Instrumento de Comodato TIM Live e
                     autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
                 </label>
@@ -124,10 +124,23 @@
 
 
         <div class="form-group text-center">
-          <button class="btn btn-success btn-outline-rounded" [disabled]="!pamentForm.valid" (click)="goToNext(pamentForm)">
+          <button class="btn btn-success btn-outline-rounded" [disabled]="!pamentForm.valid || !typePayment || !terms" (click)="goToNext(pamentForm)">
             Finalizar <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
         </div>
       </div>
     </div>
   </div>
 </form>
+
+<div class="tab-pane fade in active" [hidden]="!end">
+    <h3 class="head text-center"> Obrigado pela preferência! </h3>
+    <h4 class="text-center">
+        Olá {{ person.name }},
+    </h4>
+    <p class="narrow text-center">
+        Em breve nossos atendentes vão entrar em contato com você.
+    </p>
+    <br />
+    <br />
+    <br />
+</div>
