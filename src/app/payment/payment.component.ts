@@ -85,6 +85,7 @@ export class PaymentComponent implements OnInit {
         '<p> Banco: ' + this.payment.bank + '</p>' +
         '<p> Agencia: ' + this.payment.agency + '</p>' +
         '<p> Conta: ' + this.payment.account + '</p>' +
+
         '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>';
       if (this.save(form)) {
           this.emailService.send('[TIM] Contrate Agora', body).subscribe(res => {

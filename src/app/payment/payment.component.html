@@ -4,21 +4,36 @@
     <br />
     <div class='row'>
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
-        <div class="row">
-          <div class="form-group">
-            <div class="radio tim-radio">
-              <label>
-                <input type="radio" #work="ngModel" required name="typePayment" [(ngModel)]="typePayment" value="online">
-                Conta Online
-              </label>
-              <label>
-                <input type="radio" #work="ngModel" required name="typePayment" [(ngModel)]="typePayment" value="debito">
-                Débito em Conta
-              </label>
-              <label>
-                <input type="radio" #work="ngModel" required name="typePayment" [(ngModel)]="typePayment" value="boleto">
-                Boleto Bancário
-              </label>
+        <div class="row box-radio">
+          <div class="form-group ">
+            <div class="radio radio-payment">
+              <div class='col-xs-4 col-sm-4'>
+                <label>
+                  <img src="assets/images/online.jpg">
+                  <div class="radio-button">
+                      <input type="radio" name="radio" checked required name="typePayment" [(ngModel)]="typePayment" value="online">
+                      <span> Conta Online </span>
+                  </div>
+                </label>
+              </div>
+              <div class='col-xs-4 col-sm-4'>
+                <label>
+                  <img src="assets/images/debito.jpg">
+                  <div class="radio-button">
+                    <input type="radio" required name="typePayment" [(ngModel)]="typePayment" value="debito">
+                    <span> Débito em Conta </span>
+                  </div>
+                </label>
+              </div>
+              <div class='col-xs-4 col-sm-4'>
+                <label>
+                  <img src="assets/images/bill.jpg">
+                  <div class="radio-button">
+                    <input type="radio" required name="typePayment" [(ngModel)]="typePayment" value="boleto">
+                    <span> Boleto Bancário </span>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -68,44 +83,44 @@
         </div>
 
         <div class="box-account" *ngIf="typePayment == 'online'">
+          <img src="assets/images/i.jpg">
           Você Receberá o boleto de mensalidade no e-mail cadastrado.
         </div>
 
         <div class="box-bill" *ngIf="typePayment == 'boleto'">
+          <img src="assets/images/i.jpg">
+
           Você Receberá o boleto de mensalidade no endereço cadastrado.
         </div>
 
         <div class='row'>
-            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
-              <div class='col-xs-12 col-sm-12'>
-                <div class="form-group">
-                  <label class="control-label">Selecione a data de vencimento da fatura</label>
-                  <select class="form-control input-md" required id="dateEnd" name="dateEnd" type="text" [(ngModel)]="dateEnd">
-                      <option value="07"> 07 </option>
-                      <option value="10"> 10 </option>
-                      <option value="12"> 12 </option>
-                      <option value="15"> 15 </option>
-                      <option value="20"> 20 </option>
-                      <option value="25"> 25 </option>
-                    </select>
-                </div>
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <label class="control-label">Selecione a data de vencimento da fatura</label>
+              <select class="form-control input-md" required id="dateEnd" name="dateEnd" type="text" [(ngModel)]="dateEnd">
+                <option value="07"> 07 </option>
+                <option value="10"> 10 </option>
+                <option value="12"> 12 </option>
+                <option value="15"> 15 </option>
+                <option value="20"> 20 </option>
+                <option value="25"> 25 </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-xs-12 col-sm-12'>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" required name="terms" value="false">
+                  <strong> Li e concordo com o Contrato de Permanência TIM Live, Instrumento de Comodato TIM Live e
+                    autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
+                </label>
               </div>
             </div>
           </div>
-          <div class='row'>
-            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
-              <div class='col-xs-12 col-sm-12'>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" required name="terms" value="false">
-                      <strong> Li e concordo com o Contrato de Permanência TIM Live, Instrumento de Comodato TIM Live e autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
 
 
         <div class="form-group text-center">
