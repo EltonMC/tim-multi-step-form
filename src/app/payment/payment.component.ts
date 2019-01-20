@@ -13,6 +13,7 @@ import fourG from '../../assets/data/4g-tim.json';
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css']
 })
+
 export class PaymentComponent implements OnInit {
 
     title = 'FORMA DE PAGAMENTO';
@@ -21,10 +22,11 @@ export class PaymentComponent implements OnInit {
     mainAddress: Address;
     auxAddress: Address;
     dateEnd = '';
-    typePayment = false;
+    typePayment: any;
     banks: any;
     form: any;
     end = false;
+    terms: any;
 
     constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
       this.banks = Banks;

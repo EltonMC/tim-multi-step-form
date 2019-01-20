@@ -71,3 +71,164 @@
 .iradio_buttons.checked {
     background-position: -168px 0;
 }
+
+
+    .slider {
+      width: 80%;
+      margin: auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+    /* .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    } */
+
+    .plan-box {
+      min-width: 25%;
+      border: 1px solid #b2b2b2;
+      border-radius: 20px;
+    }
+
+    .plan-box .box-header {
+      background-color: #134080;
+      border-radius: 20px 20px 0 0;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .plan-box .box-header span {
+      color: white;
+      display: block;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .plan-box .box-header .title {
+      font-size: 45px;
+    }
+
+    .plan-box .box-header .description {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .plan-box .box-benefits {
+      background: #f2f2f2;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .plan-box .box-benefits span {
+      display: block;
+    }
+
+    .plan-box .box-benefits .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #004691;
+    }
+
+    .plan-box .box-benefits .channels {
+      font-size: 18px;
+      font-weight: bold;
+      color: #d4145a;
+      margin-bottom: 20px;
+    }
+
+    .plan-box .box-benefits .tv-partners {
+      font-size: 16px;
+      color: #004691;
+      margin-bottom: 5px;
+    }
+
+    .plan-box .box-benefits img {
+      width: 50px;
+      display: inline;
+    }
+
+    .plan-box .box-body {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+
+    .plan-box .box-body span {
+      display: block;
+    }
+
+    .plan-box .box-body .value {
+      position: relative;
+      left: 25px;
+      color: #004691;
+      margin-bottom: 10px;
+    }
+
+    .plan-box .box-body .value .type,
+    .plan-box .box-body .value .cents {
+      font-size: 25px;
+      font-weight: 900;
+      top: -25px;
+      position: relative;
+    }
+
+    .plan-box .box-body .value .price {
+      font-size: 60px;
+      font-weight: 900;
+    }
+
+    .plan-box .box-body .value .month {
+      position: relative;
+      font-weight: bold;
+      left: -40px;
+    }
+
+    .plan-box .box-body .tax,
+    .plan-box .box-body .download,
+    .plan-box .box-body .upload {
+      font-size: 14px;
+      color: #333333;
+    }
+
+    .plan-box .box-body .tax {
+      margin-bottom: 10px;
+    }
+
+    .plan-box .box-body button {
+      border: none;
+      background: #5aa012;
+      color: white;
+      padding: 10px 50px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .plan-box .box-footer {
+      border-top: 1px solid #eeeeee;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .plan-box .box-footer .title {
+      color: #333333;
+    }

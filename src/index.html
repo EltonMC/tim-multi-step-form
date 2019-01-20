@@ -8,7 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick-theme.css">
 </head>
 
 <body>
@@ -23,5 +24,47 @@
         </div>
     </multi-step-wizard-app>
 </body>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="assets/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function () {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1500,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 720,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 450,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+
+
+        ]
+      });
+    });
+  </script>
+
 
 </html>

@@ -7,6 +7,7 @@ import { FormDataService } from '../data/formData.service';
 
 import Brazil from '../../assets/data/brazil-states-cities.json';
 import fourG from '../../assets/data/4g-tim.json';
+import fibra from '../../assets/data/fibra-tim.json';
 
 @Component ({
     // tslint:disable-next-line:component-selector
@@ -50,9 +51,11 @@ export class LocationComponent implements OnInit {
         // tslint:disable-next-line:curly
         // tslint:disable-next-line:max-line-length
         fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
+        fibra.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
+
         if (!form.valid) {
           return false;
-        }else if (!this.flagLocation){
+        }else if (!this.flagLocation) {
           this.flagLocation = true;
           return false;
         }
