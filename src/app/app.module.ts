@@ -13,6 +13,7 @@ import { PlanComponent } from './plan/plan.component';
 import { PersonComponent } from './person/person.component';
 import { ResultComponent } from './result/result.component';
 import { CpfCnpjModule } from 'ng2-cpf-cnpj';
+import { SlickModule } from 'ngx-slick';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +31,8 @@ import { PaymentComponent } from './payment/payment.component';
                     AppRoutingModule,
                     HttpClientModule,
                     CpfCnpjModule,
-                    NgxMaskModule.forRoot()
+                    NgxMaskModule.forRoot(),
+                    SlickModule.forRoot()
                   ],
     providers:    [
       { provide: EmailService, useClass: EmailService },

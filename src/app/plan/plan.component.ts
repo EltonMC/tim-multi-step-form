@@ -21,6 +21,10 @@ export class PlanComponent implements OnInit {
     flagFibra = false;
     plan = {};
     form: any;
+    slideConfig = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+     };
 
     constructor(private router: Router, private formDataService: FormDataService) {
       this.plans = Plans;

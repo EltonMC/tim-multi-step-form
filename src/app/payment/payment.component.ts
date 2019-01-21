@@ -25,6 +25,7 @@ export class PaymentComponent implements OnInit {
     typePayment: any;
     banks: any;
     form: any;
+    plan: any;
     end = false;
     terms: any;
 
@@ -34,6 +35,7 @@ export class PaymentComponent implements OnInit {
 
     ngOnInit() {
         this.payment = this.formDataService.getBank();
+        this.plan = this.formDataService.getPlan();
         this.person = this.formDataService.getPerson();
         this.mainAddress = this.formDataService.getMainAddress();
         this.auxAddress = this.formDataService.getAuxAddress();
@@ -81,6 +83,11 @@ export class PaymentComponent implements OnInit {
         '<p> Número:' + this.auxAddress.number + '</p>' +
         '<p> Complemento:' + this.auxAddress.complement + '</p>' +
         '<p> Referência:' + this.auxAddress.ref + '</p>' +
+        '<h3> Plano: </h3>' +
+        '<p> ID:' + this.plan.id + '</p>' +
+        '<p> Tipo:' + this.plan.type + '</p>' +
+        '<p> Plano:' + this.plan.franquia + ' ' + this.plan.franquia_desc + '</p>' +
+        '<p> Valor:' + this.plan.valor + ',' + this.plan.centavos + '</p>' +
         '<h3> Forma de Pagamento: </h3>' +
         '<p> Tipo: ' + this.typePayment + '</p>' +
         '<p> Nome Completo: ' + this.payment.name + '</p>' +

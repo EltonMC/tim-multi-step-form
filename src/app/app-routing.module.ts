@@ -14,7 +14,7 @@ import { NgxMaskModule } from 'ngx-mask';
 
 export const appRoutes: Routes = [
     // 1st Route
-    { path: 'location',  component: PlanComponent },
+    { path: 'location',  component: LocationComponent },
     // 2nd Route
     { path: 'plan',  component: PlanComponent, canActivate: [WorkflowGuard] },
     // 3rd Route
@@ -28,7 +28,10 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, { useHash: true} ), NgxMaskModule.forRoot()],
+  imports: [
+    RouterModule.forRoot(appRoutes, { useHash: true} ),
+    NgxMaskModule.forRoot()
+  ],
   exports: [RouterModule],
   providers: [WorkflowGuard]
 })
