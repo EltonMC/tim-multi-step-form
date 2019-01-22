@@ -67,7 +67,6 @@ export class PlanComponent implements OnInit {
     }
 
     goToNext(form: any) {
-      console.log(form);
       if (this.save(form)) {
           // Navigate to the person page
           this.router.navigate(['/person']);
