@@ -51,6 +51,7 @@ export class PersonComponent implements OnInit {
     }
 
     goToNext(form: any) {
+        console.log(form);
 
         if (!this.flagAddress) {
           this.auxAddress = this.mainAddress;
