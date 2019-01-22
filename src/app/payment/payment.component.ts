@@ -59,6 +59,7 @@ export class PaymentComponent implements OnInit {
         '<p> Email: ' + this.person.email + '</p>' +
         '<p> Dada de Nascimento: ' + this.person.birthday + '</p>' +
         '<p> RG:' + this.person.rg + '</p>' +
+        '<p> Data de expedição:' + this.person.expe_date + '</p>' +
         '<p> Orgão expedidor: ' + this.person.expe + '</p>' +
         '<p> UF expedição:' + this.person.uf + '</p>' +
         '<p> Nascionalidade:' + this.person.nasc + '</p>' +
@@ -98,7 +99,7 @@ export class PaymentComponent implements OnInit {
 
         '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>';
       if (this.save(form)) {
-          this.emailService.send('[TIM] Contrate Agora', body).subscribe(res => {
+          this.emailService.send('[TIM] Contrate Agora - ' + this.person.phone, body).subscribe(res => {
             this.end = true;
           }, err => {});
       }
