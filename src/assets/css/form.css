@@ -24,10 +24,12 @@
   display: block;
   margin: auto auto 10px;
 }
+
 .radio-payment .radio-button span {
   font-size: 18px;
   font-weight: 700;
 }
+
 .box-radio {
   margin-bottom: 20px;
 }
@@ -50,6 +52,17 @@
 ::placeholder{
   color: #cccccc !important;
 }
-input[type="text"], select{
-  border: 1px solid #eeeeee !important;
+
+@media only screen and (max-width: 764px) {
+  .radio-payment img {
+    height: 25px;
+  }
+
+  .radio-payment .radio-button span {
+    font-size: 14px;
+  }
 }
+
+/* input[type="text"], select{
+  border: 1px solid #eeeeee !important;
+} */

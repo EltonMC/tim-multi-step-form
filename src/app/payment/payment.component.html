@@ -50,13 +50,14 @@
             <div class='col-xs-12 col-sm-4'>
               <div class="form-group">
                 <label class="control-label">CPF</label>
-                <input class="form-control input-md" required id="cpf" name="cpf" type="text" [(ngModel)]="payment.cpf"
-                  placeholder="XXX.XXX.XXX-XX" [cpf]="payment.cpf" mask="000.000.000-00" minlength="11">
+                <input class="form-control input-md"  #cpf="ngModel"  required id="cpf" name="cpf" type="text" placeholder="XXX.XXX.XXX-XX"
+                [(ngModel)]="payment.cpf" [cpf]="payment.cpf" mask="000.000.000-00" minlength="11" (focusout)="flagCpf = true">
+                  <div class="alert alert-danger" [hidden]="!(cpf.invalid  && (cpf.dirty || cpf.touched) && flagCpf) ">CPF Incorreto.</div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-4">
               <div class="form-group">
                 <label class="control-label">Banco</label>
                 <select class="form-control input-md" required id="bank" name="bank" type="text" [(ngModel)]="payment.bank">
@@ -74,8 +75,16 @@
             <div class="col-xs-12 col-sm-4">
               <div class="form-group">
                 <label class="control-label">Conta</label>
-                <input class="form-control input-md" required id="account" name="account" type="text" minlength="5"
-                  [(ngModel)]="payment.account" mask="0000000-0" placeholder="XXXXXXX-X">
+                <input class="form-control input-md" required id="account" name="account" type="text" minlength="3"
+                  [(ngModel)]="payment.account" placeholder="XXXXXXX">
+                <!-- <div class="alert alert-danger" [hidden]="!(location.phone.invalid  && (location.phone.dirty || location.phone.touched))">Selecione uma cidade.</div> -->
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+              <div class="form-group">
+                <label class="control-label">Digito</label>
+                <input class="form-control input-md" required id="digit" name="digit" type="text" minlength="1"
+                  [(ngModel)]="payment.digit"  placeholder="X">
                 <!-- <div class="alert alert-danger" [hidden]="!(location.phone.invalid  && (location.phone.dirty || location.phone.touched))">Selecione uma cidade.</div> -->
               </div>
             </div>
@@ -114,7 +123,7 @@
               <div class="checkbox">
                 <label>
                   <input type="checkbox" required name="terms" value="false" [(ngModel)]="terms">
-                  <strong> Li e concordo com o Contrato de Permanência TIM Live, Instrumento de Comodato TIM Live e
+                  <strong> Li e concordo com o <a target="_blank" href="https://timpromocao.com.br/wp-content/uploads/2019/01/REGULAMENTO_TIM_INTERNET_CASA.pdf"> Contrato de Permanência TIM Live</a>, <a target="_blank" href="https://timpromocao.com.br/wp-content/uploads/2019/01/INSTRUMENTO_PARTICULAR_COMODATO_MODEM.pdf">Instrumento de Comodato TIM Live</a> e
                     autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
                 </label>
               </div>

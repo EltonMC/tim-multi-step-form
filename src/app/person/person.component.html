@@ -15,8 +15,8 @@
           <div class="form-group">
             <label class="control-label">CPF</label>
             <input class="form-control input-md"  #cpf="ngModel"  required id="cpf" name="cpf" type="text" placeholder="CPF" [(ngModel)]="person.cpf" [cpf]="person.cpf"
-              mask="000.000.000-00" minlength="11">
-            <div class="alert alert-danger" [hidden]="!(cpf.invalid  && (cpf.dirty || cpf.touched))">CPF Incorreto.</div>
+              mask="000.000.000-00" minlength="11" (focusout)="flagCpf = true">
+            <div class="alert alert-danger" [hidden]="!(cpf.invalid  && (cpf.dirty || cpf.touched) && flagCpf) ">CPF Incorreto.</div>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
         </div>
         <div class='col-xs-12 col-sm-3'>
           <div class="form-group">
-            <label class="control-label">Órgão expedidor</label>
+            <label class="control-label">Órgão expedidor <a target="_blank" href="https://www.significados.com.br/orgao-expedidor/"> <i class="glyphicon glyphicon-info-sign"></i> </a></label>
             <select class="form-control input-md" required id="expe" name="expe" type="text" placeholder="Expedidor" [(ngModel)]="person.expe">
                 <option value="ssp" selected> Secretaria da Segurança Pública (SSP) </option>
                 <option value="CNIg"> Conselho Nacional de Imigração (CNIg) </option>
@@ -125,9 +125,9 @@
       <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
         <div class='col-xs-12 col-sm-4'>
           <div class="form-group">
-            <label class="control-label">CEP</label>
-            <input class="form-control input-md" required name="mainCep" type="text" minlength="8" placeholder="00000-000"
-              mask="00000-000" [(ngModel)]="mainAddress.cep">
+            <label class="control-label">CEP <a target="_blank" href="http://www.buscacep.correios.com.br/sistemas/buscacep/"> <i class="glyphicon glyphicon-info-sign"></i> </a> </label>
+            <input class="form-control input-md" #cep="ngModel" required name="mainCep" type="text" minlength="8" placeholder="00000-000"
+              mask="00000-000" [(ngModel)]="mainAddress.cep" (focusout)="getMainAddress()">
           </div>
         </div>
         <div class='col-xs-12 col-sm-8'>
@@ -156,7 +156,7 @@
         <div class='col-xs-12 col-sm-2'>
           <div class="form-group">
             <label class="control-label">Estado</label>
-            <input class="form-control input-md" type="text" name="mainState" placeholder="Estado" [(ngModel)]="mainAddress.state">
+            <input class="form-control input-md" required type="text" name="mainState" placeholder="Estado" [(ngModel)]="mainAddress.state">
           </div>
         </div>
       </div>
@@ -212,9 +212,9 @@
         <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
           <div class='col-xs-12 col-sm-4'>
             <div class="form-group">
-              <label class="control-label">CEP</label>
+              <label class="control-label">CEP <a target="_blank" href="http://www.buscacep.correios.com.br/sistemas/buscacep/"> <i class="glyphicon glyphicon-info-sign"></i> </a></label>
               <input class="form-control input-md" required name="auxCep" type="text" minlength="8" placeholder="00000-000"
-                mask="00000-000" [(ngModel)]="auxAddress.cep">
+                mask="00000-000" [(ngModel)]="auxAddress.cep" (focusout)="getAuxAddress()">
             </div>
           </div>
           <div class='col-xs-12 col-sm-8'>

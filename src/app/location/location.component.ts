@@ -71,7 +71,7 @@ export class LocationComponent implements OnInit {
       '<p> Celular: ' + this.location.phone + '<?p>' +
       '<p> Estado: ' + this.location.state + '<?p>' +
       '<p> Cidade: ' + this.location.city + '<?p>';
-      this.emailService.send('[TIM] Disponibilidade ', body).subscribe(res => {
+      this.emailService.send('[TIM] Disponibilidade - ' + this.location.phone, body).subscribe(res => {
         if (this.save(form)) {
           // Navigate to the plan page
           this.router.navigate(['/plan']);

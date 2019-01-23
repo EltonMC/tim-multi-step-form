@@ -1,3 +1,4 @@
+import { CepService } from './services/cep.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { PersonComponent } from './person/person.component';
 import { ResultComponent } from './result/result.component';
 import { CpfCnpjModule } from 'ng2-cpf-cnpj';
 import { SlickModule } from 'ngx-slick';
+import { GtagModule } from 'angular-gtag';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
@@ -31,11 +33,13 @@ import { PaymentComponent } from './payment/payment.component';
                     AppRoutingModule,
                     HttpClientModule,
                     CpfCnpjModule,
+                    GtagModule.forRoot({ trackingId: 'UA-132180549-1', trackPageviews: true }),
                     NgxMaskModule.forRoot(),
                     SlickModule.forRoot()
                   ],
     providers:    [
       { provide: EmailService, useClass: EmailService },
+      { provide: CepService, useClass: CepService },
       { provide: FormDataService, useClass: FormDataService },
       { provide: WorkflowService, useClass: WorkflowService }],
     declarations: [ AppComponent, NavbarComponent, LocationComponent, PlanComponent, PersonComponent, ResultComponent, PaymentComponent ],

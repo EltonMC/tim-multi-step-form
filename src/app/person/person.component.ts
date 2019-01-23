@@ -1,3 +1,4 @@
+import { CepService } from './../services/cep.service';
 import { EmailService } from './../services/email.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,14 +17,16 @@ export class PersonComponent implements OnInit {
     // title = 'Where do you live?';
     person: Person;
     flagAddress = false;
+    flagCpf = false;
     mainAddress: Address;
     auxAddress: Address;
     dateEnd = '';
     states: any;
     form: any;
 
-    constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
+    constructor(private router: Router, private formDataService: FormDataService, private cepService: CepService) {
       this.states = Brazil.states;
+
     }
 
     ngOnInit() {
@@ -43,6 +46,24 @@ export class PersonComponent implements OnInit {
         return true;
     }
 
+    getMainAddress() {
+      this.cepService.get(this.mainAddress.cep).subscribe(res => {
+        this.mainAddress.street = res.logradouro;
+        this.mainAddress.city = res.localidade;
+        this.mainAddress.state = res.uf;
+        this.mainAddress.district = res.bairro;
+      });
+    }
+
+    getAuxAddress() {
+      this.cepService.get(this.auxAddress.cep).subscribe(res => {
+        this.auxAddress.street = res.logradouro;
+        this.auxAddress.city = res.localidade;
+        this.auxAddress.state = res.uf;
+        this.auxAddress.district = res.bairro;
+      });
+    }
+
     goToPrevious(form: any) {
         if (this.save(form)) {
             // Navigate to the plan page
@@ -51,8 +72,6 @@ export class PersonComponent implements OnInit {
     }
 
     goToNext(form: any) {
-        console.log(form);
-
         if (!this.flagAddress) {
           this.auxAddress = this.mainAddress;
         }

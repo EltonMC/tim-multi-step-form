@@ -7,6 +7,7 @@ import { FormDataService } from '../data/formData.service';
 
 import Banks from '../../assets/data/banks.json';
 import fourG from '../../assets/data/4g-tim.json';
+import { Gtag } from 'angular-gtag';
 
 @Component({
   selector: 'app-payment',
@@ -28,8 +29,13 @@ export class PaymentComponent implements OnInit {
     plan: any;
     end = false;
     terms: any;
+    flagCpf = false;
 
-    constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
+    constructor(
+      private router: Router,
+      private formDataService: FormDataService,
+      private emailService: EmailService,
+      private gtag: Gtag) {
       this.banks = Banks;
     }
 
@@ -50,7 +56,6 @@ export class PaymentComponent implements OnInit {
     }
 
     goToNext(form: any) {
-
       const body =
         '<h1> Dados do formulario: </h1>' +
         '<h3> Dados do cliente: </h3>' +
@@ -96,10 +101,14 @@ export class PaymentComponent implements OnInit {
         '<p> Banco: ' + this.payment.bank + '</p>' +
         '<p> Agencia: ' + this.payment.agency + '</p>' +
         '<p> Conta: ' + this.payment.account + '</p>' +
+        '<p> Digito: ' + this.payment.digit + '</p>' +
 
         '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>';
       if (this.save(form)) {
           this.emailService.send('[TIM] Contrate Agora - ' + this.person.phone, body).subscribe(res => {
+            this.gtag.event('conversion', {
+              send_to: 'AW-851418879/VnMWCLCVw5MBEP-9_pUD',
+            });
             this.end = true;
           }, err => {});
       }

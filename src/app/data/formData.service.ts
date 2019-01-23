@@ -57,6 +57,7 @@ export class FormDataService {
       email: this.formData.email,
       birthday: this.formData.birthday,
       rg: this.formData.rg,
+      expe_date: this.formData.expe_date,
       expe: this.formData.expe,
       uf: this.formData.uf,
       nasc: this.formData.nasc,
@@ -75,6 +76,7 @@ export class FormDataService {
     this.formData.email = data.email;
     this.formData.birthday = data.birthday;
     this.formData.rg = data.rg;
+    this.formData.expe_date = data.expe_date;
     this.formData.expe = data.expe;
     this.formData.uf = data.uf;
     this.formData.nasc = data.nasc;
@@ -138,6 +140,7 @@ export class FormDataService {
       agency: this.formData.bank.agency,
       bank: this.formData.bank.bank,
       account: this.formData.bank.account,
+      digit: this.formData.bank.digit,
     };
     return bank;
   }

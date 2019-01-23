@@ -19,11 +19,9 @@ export class ResultComponent implements OnInit {
     ngOnInit() {
         this.formData = this.formDataService.getFormData();
         this.isFormValid = this.formDataService.isFormValid();
-        console.log('Result feature loaded!');
     }
 
     submit() {
-        alert('Excellent Job!');
         this.formData = this.formDataService.resetFormData();
         this.isFormValid = false;
     }

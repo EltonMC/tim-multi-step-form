@@ -1,6 +1,6 @@
-import { Component, OnInit, Input }   from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { FormDataService }            from './data/formData.service';
+import { FormDataService } from './data/formData.service';
 
 @Component ({
     selector:     'multi-step-wizard-app'
@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.formData = this.formDataService.getFormData();
-        console.log(this.title + ' loaded!');
+        // console.log(this.title + ' loaded!');
     }
 }

@@ -280,11 +280,11 @@ cpf_cnpj@0.2.0
 MIT
 MIT
 
-@angular/core@5.2.11
+@angular/forms@5.2.11
 MIT
 MIT
 
-@angular/forms@5.2.11
+@angular/core@5.2.11
 MIT
 MIT
 

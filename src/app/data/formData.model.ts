@@ -8,6 +8,7 @@ export class FormData {
     email = '';
     birthday = '';
     rg = '';
+    expe_date = '';
     expe = '';
     uf = '';
     nasc = '';
@@ -15,7 +16,7 @@ export class FormData {
     mother = '';
     mainAddress: Address = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
     auxAddress: Address  = {'cep': '', 'city': '', 'street': '', 'district': '', 'complement': '', 'number': '', 'ref': '', 'state': ''};
-    bank: Bank = {'account': '', 'agency': '', 'bank': '', 'cpf': '', 'name': ''};
+    bank: Bank = {'account': '', 'agency': '', 'bank': '', 'cpf': '', 'name': '', 'digit': ''};
     clear() {
       this.state = '';
       this.city = '';
@@ -48,6 +49,7 @@ export class Person {
     email = '';
     birthday = '';
     rg = '';
+    expe_date = '';
     expe = '';
     uf = '';
     nasc = '';
@@ -73,5 +75,6 @@ export class Bank {
   account = '';
   cpf = '';
   agency = '';
+  digit = '';
 
 }

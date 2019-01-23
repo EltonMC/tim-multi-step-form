@@ -184,6 +184,7 @@
 
 .plan-box .box-benefits img {
   width: 50px;
+  padding: 5px;
   display: inline;
   vertical-align: middle;
 }
@@ -272,4 +273,48 @@
 .plan-box .box-footer .title {
   font-family:'Myriad Pro Regular';
   color: #333333;
+}
+
+.slick-prev {
+  left: -20px;
+}
+.slick-prev:before {
+  content: url("../images/left-arrow.png");
+}
+.slick-next {
+  right: 20px;
+}
+.slick-next:before {
+  content: url("../images/right-arrow.png");
+}
+
+.header-tim {
+  background-color: #004691;
+  display: flex;
+}
+.header-tim img {
+  height: 40px;
+  margin: 20px;
+}
+.header-tim .box-0800 {
+  color: white;
+  display: grid;
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 764px) {
+  .header-tim .box-0800 .title {
+    font-size: 15px !important;
+  }
+  .header-tim .box-0800 .number {
+      font-size: 20px !important;
+  }
+}
+.header-tim .box-0800 .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.header-tim .box-0800 .number {
+  font-size: 24px;
+  font-weight: bold;
 }

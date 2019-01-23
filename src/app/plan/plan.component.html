@@ -2,7 +2,7 @@
   <div class="form-horizontal">
     <div class="tab-pane fade in active">
       <h4 class="head text-center">{{title}}</h4>
-      <div class='row' *ngIf="!flagFibra" style="margin-bottom: 20px;">
+      <div class='row' *ngIf="flagFibra" style="padding-bottom: 20px;">
         <h4 class="head text-center"> PLANOS TIM FIBRA </h4>
 
         <!-- You can now use your library component in app.component.html -->
@@ -40,7 +40,7 @@
           </div>
         </ngx-slick>
       </div>
-      <div class='row' *ngIf="!flag4G" style="padding-bottom: 20px;">
+      <div class='row' *ngIf="flag4G" style="padding-bottom: 20px;">
         <h4 class="head text-center"> PLANOS TIM 4G </h4>
         <ngx-slick class="carousel col-xs-12 col-sm-offset-2 col-sm-8" #slickModal="slick-modal" [config]="slideConfig">
           <div ngxSlickItem class="plan-box" *ngFor="let item of plans?.fourG">
