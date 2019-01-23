@@ -12,6 +12,6 @@ export class EmailService {
     formData.append('body', body);
     formData.append('subject', subject);
     // return this.http.post('http://localhost/tim-response/send.php', formData, {responseType: 'text'});
-    return this.http.post('http://timpromocao.com.br/tim-response/send.php', formData, {responseType: 'text'});
+    return this.http.post('https://timpromocao.com.br/tim-response/send.php', formData, {responseType: 'text'});
   }
 }
