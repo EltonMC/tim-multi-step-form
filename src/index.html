@@ -19,7 +19,41 @@
       gtag('js', new Date());
       gtag('config', 'UA-132180549-1', { 'send_page_view': false });
     </script>
+    <!-- Event snippet for Ligacao 0800 Mobile TIM conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_0800_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-851418879/VnMWCLCVw5MBEP-9_pUD',
+            'event_callback': callback
+        });
+        return false;
+      }
+      </script>
+    <!-- Event snippet for COMPRA SITE TIM conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_end_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-851418879/FogfCLW5vpMBEP-9_pUD',
+            'transaction_id': '',
+            'event_callback': callback
+        });
+        return false;
+      }
+      </script>
   </head>
+
 
 <body>
     <!-- Show simple splash screen-->
