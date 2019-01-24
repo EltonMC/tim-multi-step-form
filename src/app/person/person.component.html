@@ -58,7 +58,8 @@
           <div class="form-group">
             <label class="control-label">Órgão expedidor <a target="_blank" href="https://www.significados.com.br/orgao-expedidor/"> <i class="glyphicon glyphicon-info-sign"></i> </a></label>
             <select class="form-control input-md" required id="expe" name="expe" type="text" placeholder="Expedidor" [(ngModel)]="person.expe">
-                <option value="ssp" selected> Secretaria da Segurança Pública (SSP) </option>
+                <option  value="" selected> Selecione uma opção </option>
+                <option value="ssp"> Secretaria da Segurança Pública (SSP) </option>
                 <option value="CNIg"> Conselho Nacional de Imigração (CNIg) </option>
                 <option value="CGPI"> Coordenação-Geral de Privilégios e Imunidades (CGPI) </option>
                 <option value="DPF"> Departamento de Polícia Federal (DPF) </option>
@@ -73,6 +74,7 @@
           <div class="form-group">
             <label class="control-label">Estado*</label>
             <select class="form-control input-md" required id="uf" name="uf" type="text" [(ngModel)]="person.uf">
+              <option  value="" > Selecione uma opção </option>
               <option *ngFor="let state of states" value="{{ state.uf }}"> {{ state.name }} </option>
             </select>
             <!-- <div class="alert alert-danger" [hidden]="!(location.state.invalid  && (location.state.dirty || location.state.touched))">Selecione um estado.</div> -->
@@ -86,7 +88,8 @@
           <div class="form-group">
             <label class="control-label">Nacionalidade</label>
             <select class="form-control input-md" required id="nasc" name="nasc" type="text" [(ngModel)]="person.nasc">
-              <option value="brasileiro" selected> Brasileiro </option>
+              <option  value="" > Selecione uma opção </option>
+              <option value="brasileiro"> Brasileiro </option>
               <option value="estrangeiro"> Estrangeiro </option>
             </select>
           </div>

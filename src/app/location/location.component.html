@@ -9,6 +9,7 @@
                         <div class="form-group">
                             <label class="control-label" for="firstname">Estado*</label>
                             <select class="form-control input-md" #firstname="ngModel" required id="state" name="state" type="text" [(ngModel)]="location.state" (change)="onChange($event)">
+                              <option  value=""> Selecione uma opção </option>
                               <option *ngFor="let state of states" value="{{ state.uf }}"> {{ state.name }} </option>
                             </select>
                             <!-- <div class="alert alert-danger" [hidden]="!(location.state.invalid  && (location.state.dirty || location.state.touched))">Selecione um estado.</div> -->
@@ -18,6 +19,7 @@
                         <div class="form-group">
                             <label class="control-label" for="lastname">Cidade*</label>
                             <select class="form-control input-md" #lastname="ngModel" required id="city" name="city" type="text" [(ngModel)]="location.city">
+                              <option  value=""> Selecione uma opção </option>
                               <option *ngFor="let city of cities" value="{{ city }}"> {{ city }} </option>
                             </select>
                             <!-- <div class="alert alert-danger" [hidden]="!(location.city.invalid  && (location.city.dirty || location.city.touched))">Selecione uma cidade.</div> -->

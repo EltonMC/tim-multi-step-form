@@ -61,6 +61,7 @@
               <div class="form-group">
                 <label class="control-label">Banco</label>
                 <select class="form-control input-md" required id="bank" name="bank" type="text" [(ngModel)]="payment.bank">
+                  <option  value=""> Selecione uma opção </option>
                   <option *ngFor="let bank of banks" value="{{ bank.type }}"> {{ bank.name }} </option>
                 </select>
               </div>
@@ -107,6 +108,7 @@
             <div class="form-group">
               <label class="control-label">Selecione a data de vencimento da fatura</label>
               <select class="form-control input-md" required id="dateEnd" name="dateEnd" type="text" [(ngModel)]="dateEnd">
+                <option  value=""> Selecione uma opção </option>
                 <option value="07"> 07 </option>
                 <option value="10"> 10 </option>
                 <option value="12"> 12 </option>
