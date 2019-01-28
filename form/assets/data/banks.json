@@ -1,0 +1,7 @@
+ [
+  { "name": "Banco do Brasil", "type": "banco_do_brasil"},
+  { "name": "Bradesco", "type": "bradesco"},
+  { "name": "Caixa Economica Federal", "type": "caixa"},
+  { "name": "Itaú", "type": "itau"},
+  { "name": "Santander", "type": "santander"}
+]

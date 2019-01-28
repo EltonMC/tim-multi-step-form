@@ -145,11 +145,12 @@
     {
       "type": "4g",
       "id": 101,
-      "franquia": "50",
-      "franquia_desc": "GIGAS",
+      "franquia": "2",
+      "franquia_desc": "MEGA",
+      "canais": "+13 CANAIS ONLINE",
       "valor": "83",
       "centavos": "90",
-      "taxa": "Desconto válido por 12 meses.",
+      "taxa": "12x R$ 50,00",
       "upload": "2MB",
       "download": "2MB",
       "promocao": {
@@ -168,11 +169,12 @@
     {
       "type": "4g",
       "id": 102,
-      "franquia": "80",
-      "franquia_desc": "GIGAS",
+      "franquia": "4",
+      "franquia_desc": "MEGA",
+      "canais": "+13 CANAIS ONLINE",
       "valor": "109",
       "centavos": "90",
-      "taxa": "Desconto válido por 12 meses.",
+      "taxa": "12x R$ 50,00",
       "upload": "4MB",
       "download": "4MB",
       "promocao": {

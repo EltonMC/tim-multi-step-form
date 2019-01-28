@@ -46,19 +46,17 @@
           <div ngxSlickItem class="plan-box" *ngFor="let item of plans?.fourG">
             <div class="box-header">
               <span class="title"> <b>{{ item.franquia }}</b>{{ item.franquia_desc }} </span>
-              <span class="description"> DE VELOCIDADE </span>
             </div>
-            <!-- <div class="box-benefits">
-                <span class="title"> Voz fix ilimitada Brasil </span>
-                <span class="channels"> +13 CANAIS ONLINE </span>
-                <span class="tv-partners"> Parceiros de vídeo </span>
-                <div class="tv-partners-img">
-                  <img src="http://placehold.it/25x25?text=1">
-                  <img src="http://placehold.it/25x25?text=1">
-                  <img src="http://placehold.it/25x25?text=1">
-                  <img src="http://placehold.it/25x25?text=1">
-                </div>
-              </div> -->
+            <div class="box-benefits">
+              <span class="title"> Velocidade de Download: {{ item.download }} </span>
+              <span class="title"> Velocidade de upload: {{ item.upload }} </span>
+              <span class="title" style="padding-bottom: 20px;"> Franquia: {{ item.franquia }} {{ item.franquia_desc }} </span>
+              <span class="channels"> MODEM EM COMODADATO </span>
+              <div class="tv-partners-img" >
+                <img style="width: 100px;" src="https://timpromocao.com.br/wp-content/uploads/2019/01/tim-protect-modal.png">
+                <img style="width: 100px;" src="https://timpromocao.com.br/wp-content/uploads/2019/01/plugueenavegue.png">
+              </div>
+            </div>
             <div class="box-body">
               <span *ngIf="item.promocao.flag" class="promotion"> <label>de R$ {{ item.promocao.valor }}</label> por
               </span>
@@ -68,11 +66,9 @@
                 <label class="cents">,{{ item.centavos }}</label>
                 <label class="month">/MÊS</label>
               </span>
-              <span *ngIf="item.promocao.flag" class="validate"> {{ item.promocao.validate }} </span>
-              <!-- <span class="tax"> Taxa de Habilitação: 12x R$ 30,00 </span> -->
+              <!-- <span *ngIf="item.promocao.flag" class="validate"> {{ item.promocao.validade }} </span> -->
+              <span class="tax"> {{ item.taxa }} </span>
               <button (click)="goToNext(item)"> Selecionar <br /> Plano </button>
-              <span class="download"> Velocidade de Download: 500MB </span>
-              <span class="upload"> Velocidade de upload: 250MB </span>
             </div>
             <!-- <div class="box-footer">
                 <span class="title"> Mais Beneficios </span>

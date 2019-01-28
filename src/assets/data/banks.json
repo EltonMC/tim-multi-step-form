@@ -1,7 +1,9 @@
- [
+[
   { "name": "Banco do Brasil", "type": "banco_do_brasil"},
+  { "name": "Santander", "type": "santander"},
   { "name": "Bradesco", "type": "bradesco"},
-  { "name": "Caixa Economica Federal", "type": "caixa"},
+  { "name": "Banco do Estado do Pará", "type": "banpará"},
   { "name": "Itaú", "type": "itau"},
-  { "name": "Santander", "type": "santander"}
+  { "name": "Banco Safra", "type": "banco_safra"},
+  { "name": "Bancoob", "type": "bancoob"}
 ]
