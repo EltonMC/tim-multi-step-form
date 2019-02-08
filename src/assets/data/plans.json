@@ -151,7 +151,7 @@
       "centavos": "90",
       "taxa": "Desconto válido por 12 meses.",
       "upload": "2MB",
-      "download": "2MB",
+      "download": "Até 5MB",
       "promocao": {
         "flag": true,
         "valor": "109,90",
@@ -173,8 +173,8 @@
       "valor": "109",
       "centavos": "90",
       "taxa": "Desconto válido por 12 meses.",
-      "upload": "4MB",
-      "download": "4MB",
+      "upload": "2MB",
+      "download": "Até 5MB",
       "promocao": {
         "flag": true,
         "valor": "119,90",

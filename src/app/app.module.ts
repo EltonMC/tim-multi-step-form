@@ -26,6 +26,7 @@ import { WorkflowService } from './workflow/workflow.service';
 import { NgxMaskModule } from 'ngx-mask';
 import { EmailService } from './services/email.service';
 import { PaymentComponent } from './payment/payment.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
     imports:      [ BrowserModule,
@@ -40,6 +41,7 @@ import { PaymentComponent } from './payment/payment.component';
     providers:    [
       { provide: EmailService, useClass: EmailService },
       { provide: CepService, useClass: CepService },
+      { provide: DataService, useClass: DataService },
       { provide: FormDataService, useClass: FormDataService },
       { provide: WorkflowService, useClass: WorkflowService }],
     declarations: [ AppComponent, NavbarComponent, LocationComponent, PlanComponent, PersonComponent, ResultComponent, PaymentComponent ],

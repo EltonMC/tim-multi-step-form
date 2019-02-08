@@ -6,8 +6,11 @@ import { Location } from '../data/formData.model';
 import { FormDataService } from '../data/formData.service';
 
 import Brazil from '../../assets/data/brazil-states-cities.json';
-import fourG from '../../assets/data/4g-tim.json';
-import fibra from '../../assets/data/fibra-tim.json';
+// import fourG from '../../assets/data/4g-tim.json';
+// import fibra from '../../assets/data/fibra-tim.json';
+
+import { Gtag } from 'angular-gtag';
+import { DataService } from '../services/data.service';
 
 @Component ({
     // tslint:disable-next-line:component-selector
@@ -22,12 +25,25 @@ export class LocationComponent implements OnInit {
     states: any;
     cities = [];
     form: any;
+    fibra = [];
+    fourG = [];
 
-    constructor(private router: Router, private formDataService: FormDataService, private emailService: EmailService) {
-      this.states = Brazil.states;
+    constructor(private router: Router,
+      private formDataService: FormDataService,
+      private emailService: EmailService,
+      private gtag: Gtag,
+      private dataService: DataService) {
+
+        this.states = Brazil.states;
     }
 
     ngOnInit() {
+      this.dataService.getData('4g-tim.json').subscribe(res => {
+        this.fourG = res;
+      });
+      this.dataService.getData('fibra-tim.json').subscribe(res => {
+        this.fibra = res;
+      });
         this.location = this.formDataService.getLocation();
     }
 
@@ -50,8 +66,8 @@ export class LocationComponent implements OnInit {
     save(form: any): boolean {
         // tslint:disable-next-line:curly
         // tslint:disable-next-line:max-line-length
-        fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
-        fibra.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
+        this.fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
+        this.fibra.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagLocation = true; });
 
         if (!form.valid) {
           return false;

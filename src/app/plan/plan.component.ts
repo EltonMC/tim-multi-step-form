@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { FormDataService } from '../data/formData.service';
-import Plans from '../../assets/data/plans.json';
-import fourG from '../../assets/data/4g-tim.json';
-import fibra from '../../assets/data/fibra-tim.json';
+// import Plans from '../../assets/data/plans.json';
+// import fourG from '../../assets/data/4g-tim.json';
+// import fibra from '../../assets/data/fibra-tim.json';
 import { Location } from '../data/formData.model';
+import { Gtag } from 'angular-gtag';
+import { DataService } from '../services/data.service';
 
 @Component ({
     // tslint:disable-next-line:component-selector
@@ -19,6 +21,8 @@ export class PlanComponent implements OnInit {
     location: Location;
     flag4G = false;
     flagFibra = false;
+    fourG = [];
+    fibra = [];
     plan = {};
     form: any;
     slideConfig = {
@@ -26,17 +30,29 @@ export class PlanComponent implements OnInit {
       slidesToScroll: 1,
      };
 
-    constructor(private router: Router, private formDataService: FormDataService) {
-      this.plans = Plans;
+    constructor(private router: Router,
+      private formDataService: FormDataService,
+      private gtag: Gtag,
+      private dataService: DataService) {
+
     }
 
     ngOnInit() {
         this.plan = this.formDataService.getPlan();
         this.location = this.formDataService.getLocation();
-        // tslint:disable-next-line:max-line-length
-        fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flag4G = true; });
-        fibra.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagFibra = true; });
-
+        this.dataService.getData('plans.json').subscribe(res => {
+          this.plans = res;
+        });
+        this.dataService.getData('4g-tim.json').subscribe(res => {
+          this.fourG = res;
+          // tslint:disable-next-line:max-line-length
+          this.fourG.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flag4G = true; });
+        });
+        this.dataService.getData('fibra-tim.json').subscribe(res => {
+          this.fibra = res;
+          // tslint:disable-next-line:max-line-length
+          this.fibra.map(data => {if (this.removeAcento(data) === this.removeAcento(this.location.city.toUpperCase())) this.flagFibra = true; });
+        });
     }
 
     removeAcento (text) {

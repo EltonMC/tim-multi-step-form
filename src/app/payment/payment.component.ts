@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { Bank, Person, Address } from '../data/formData.model';
 import { FormDataService } from '../data/formData.service';
 
-import Banks from '../../assets/data/banks.json';
-import fourG from '../../assets/data/4g-tim.json';
+// import Banks from '../../assets/data/banks.json';
+
 import { Gtag } from 'angular-gtag';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-payment',
@@ -35,8 +36,11 @@ export class PaymentComponent implements OnInit {
       private router: Router,
       private formDataService: FormDataService,
       private emailService: EmailService,
-      private gtag: Gtag) {
-      this.banks = Banks;
+      private gtag: Gtag,
+      private dataService: DataService) {
+        this.dataService.getData('banks.json').subscribe(res => {
+          this.banks = res;
+        });
     }
 
     ngOnInit() {
