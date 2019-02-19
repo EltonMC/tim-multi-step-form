@@ -34,20 +34,20 @@ export class PersonComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.person = this.formDataService.getPerson();
-        this.mainAddress = this.formDataService.getMainAddress();
-        this.auxAddress = this.formDataService.getAuxAddress();
+      this.person = this.formDataService.getPerson();
+      this.mainAddress = this.formDataService.getMainAddress();
+      this.auxAddress = this.formDataService.getAuxAddress();
     }
 
     save(form: any): boolean {
-        if (!form.valid) {
-            return false;
-        }
+      if (!form.valid) {
+          return false;
+      }
 
-        this.formDataService.setMainAddress(this.mainAddress);
-        this.formDataService.setAuxAddress(this.auxAddress);
-        this.formDataService.setPerson(this.person);
-        return true;
+      this.formDataService.setMainAddress(this.mainAddress);
+      this.formDataService.setAuxAddress(this.auxAddress);
+      this.formDataService.setPerson(this.person);
+      return true;
     }
 
     getMainAddress() {
