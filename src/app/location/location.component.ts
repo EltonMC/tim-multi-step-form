@@ -22,6 +22,7 @@ export class LocationComponent implements OnInit {
     title = 'Verifique nossa disponibilidade';
     location: Location;
     flagLocation = false;
+    flagLocationWarning = false;
     states: any;
     cities = [];
     form: any;
@@ -44,12 +45,14 @@ export class LocationComponent implements OnInit {
       this.dataService.getData('fibra-tim.json').subscribe(res => {
         this.fibra = res;
       });
-        this.location = this.formDataService.getLocation();
+      this.location = this.formDataService.getLocation();
     }
 
     onChange(event) {
        // tslint:disable-next-line:curly
        this.states.map(data => { if (data.uf === this.location.state) this.cities = data.cities; });
+       this.flagLocationWarning = false;
+       this.flagLocation = false;
     }
 
     removeAcento (text) {
@@ -72,7 +75,7 @@ export class LocationComponent implements OnInit {
         if (!form.valid) {
           return false;
         }else if (!this.flagLocation) {
-          this.flagLocation = true;
+          this.flagLocationWarning = true;
           return false;
         }
 
@@ -92,10 +95,13 @@ export class LocationComponent implements OnInit {
             // Navigate to the plan page
             this.router.navigate(['/plan']);
         }, err => {});
+        this.dataService.sendDisponibility(this.location.phone, this.location.city, this.location.state).subscribe(res => {
+          console.log(res);
+        }, err => console.log(err));
       }else {
         this.emailService.send('[TIM] Sem Disponibilidade - ' + this.location.phone, body).subscribe(res => {
       }, err => {});
-      }
-
     }
+  }
 }
+
