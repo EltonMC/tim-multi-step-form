@@ -7,7 +7,6 @@ import { FormDataService } from '../data/formData.service';
 
 // import Banks from '../../assets/data/banks.json';
 
-import { Gtag } from 'angular-gtag';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -36,7 +35,6 @@ export class PaymentComponent implements OnInit {
       private router: Router,
       private formDataService: FormDataService,
       private emailService: EmailService,
-      private gtag: Gtag,
       private dataService: DataService) {
         this.dataService.getData('banks.json').subscribe(res => {
           this.banks = res;
@@ -110,9 +108,6 @@ export class PaymentComponent implements OnInit {
         '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>';
       if (this.save(form)) {
           this.emailService.send('[TIM] Contrate Agora - ' + this.person.phone, body).subscribe(res => {
-            this.gtag.event('conversion', {
-              send_to: 'AW-851418879/VnMWCLCVw5MBEP-9_pUD',
-            });
             this.end = true;
           }, err => {});
       }

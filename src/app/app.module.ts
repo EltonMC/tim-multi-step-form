@@ -15,7 +15,6 @@ import { PersonComponent } from './person/person.component';
 import { ResultComponent } from './result/result.component';
 import { CpfCnpjModule } from 'ng2-cpf-cnpj';
 import { SlickModule } from 'ngx-slick';
-import { GtagModule } from 'angular-gtag';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +33,6 @@ import { DataService } from './services/data.service';
                     AppRoutingModule,
                     HttpClientModule,
                     CpfCnpjModule,
-                    GtagModule.forRoot({ trackingId: 'UA-132180549-1', trackPageviews: true }),
                     NgxMaskModule.forRoot(),
                     SlickModule.forRoot()
                   ],

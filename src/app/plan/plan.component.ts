@@ -6,7 +6,6 @@ import { FormDataService } from '../data/formData.service';
 // import fourG from '../../assets/data/4g-tim.json';
 // import fibra from '../../assets/data/fibra-tim.json';
 import { Location } from '../data/formData.model';
-import { Gtag } from 'angular-gtag';
 import { DataService } from '../services/data.service';
 
 @Component ({
@@ -32,7 +31,6 @@ export class PlanComponent implements OnInit {
 
     constructor(private router: Router,
       private formDataService: FormDataService,
-      private gtag: Gtag,
       private dataService: DataService) {
 
     }

@@ -9,7 +9,6 @@ import Brazil from '../../assets/data/brazil-states-cities.json';
 // import fourG from '../../assets/data/4g-tim.json';
 // import fibra from '../../assets/data/fibra-tim.json';
 
-import { Gtag } from 'angular-gtag';
 import { DataService } from '../services/data.service';
 
 @Component ({
@@ -32,7 +31,6 @@ export class LocationComponent implements OnInit {
     constructor(private router: Router,
       private formDataService: FormDataService,
       private emailService: EmailService,
-      private gtag: Gtag,
       private dataService: DataService) {
 
         this.states = Brazil.states;
@@ -84,6 +82,7 @@ export class LocationComponent implements OnInit {
     }
 
     goToNext(form: any) {
+
       const body =
       '<h1> Dados do formulario: </h1>' +
       '<h3> Dados do cliente: </h3>' +

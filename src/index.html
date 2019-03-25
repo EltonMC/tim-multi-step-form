@@ -12,17 +12,31 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="//unpkg.com/slick-carousel@1.8.1/slick/slick.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132180549-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-132180549-1', { 'send_page_view': true });
+
+      gtag('config', 'UA-132180549-1');
     </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 851418879 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-851418879"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-851418879');
+    </script>
+
+
     <!-- Event snippet for Ligacao 0800 Mobile TIM conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-      function gtag_0800_conversion(url) {
+      function gtag_0800(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
@@ -32,13 +46,13 @@
             'send_to': 'AW-851418879/VnMWCLCVw5MBEP-9_pUD',
             'event_callback': callback
         });
-        return false;
+        return true;
       }
       </script>
     <!-- Event snippet for COMPRA SITE TIM conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-      function gtag_end_conversion(url) {
+      function gtag_end(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
@@ -49,7 +63,7 @@
             'transaction_id': '',
             'event_callback': callback
         });
-        return false;
+        return true;
       }
       </script>
   </head>

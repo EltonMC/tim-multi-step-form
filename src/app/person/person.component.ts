@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { Person, Address } from '../data/formData.model';
 import { FormDataService } from '../data/formData.service';
 import Brazil from '../../assets/data/brazil-states-cities.json';
-import { Gtag } from 'angular-gtag';
 
 @Component ({
     // tslint:disable-next-line:component-selector
@@ -27,8 +26,7 @@ export class PersonComponent implements OnInit {
 
     constructor(private router: Router,
       private formDataService: FormDataService,
-      private cepService: CepService,
-      private gtag: Gtag) {
+      private cepService: CepService) {
       this.states = Brazil.states;
 
     }
