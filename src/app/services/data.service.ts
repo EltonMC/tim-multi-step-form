@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getData(type: string): Observable<any> {
-    return this.http.get(`https://timpromocao.com.br/data/${type}`);
+    return this.http.get(`https://assineliveinternet.com/data/${type}`);
   }
 
   sendDisponibility(number: string, city: string, state: string): Observable<any> {
@@ -18,6 +18,6 @@ export class DataService {
     formData.append('cidade', city);
     formData.append('estato', state);
     // tslint:disable-next-line:max-line-length
-    return this.http.post(`https://timpromocao.com.br/tim-response/disponibilidade.php`, formData, {responseType: 'text'});
+    return this.http.post(`https://assineliveinternet.com/tim-response/disponibilidade.php`, formData, {responseType: 'text'});
   }
 }

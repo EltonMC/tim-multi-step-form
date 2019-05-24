@@ -22,6 +22,7 @@ export class PaymentComponent implements OnInit {
     person: Person;
     mainAddress: Address;
     auxAddress: Address;
+    name1: string; phone1: string; name2: string; phone2: string;
     dateEnd = '';
     typePayment: any;
     banks: any;
@@ -104,8 +105,11 @@ export class PaymentComponent implements OnInit {
         '<p> Agencia: ' + this.payment.agency + '</p>' +
         '<p> Conta: ' + this.payment.account + '</p>' +
         '<p> Digito: ' + this.payment.digit + '</p>' +
-
-        '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>';
+        '<h3> Vencimento da Fatura: ' + this.dateEnd + '</h3>' +
+        '<p> Nome Completo: ' + this.name1 + '</p>' +
+        '<p> Telefone: ' + this.phone1 + '</p>' +
+        '<p> Nome Completo: ' + this.name2 + '</p>' +
+        '<p> Telefone: ' + this.phone2 + '</p>';
       if (this.save(form)) {
           this.emailService.send('[TIM] Contrate Agora - ' + this.person.phone, body).subscribe(res => {
             this.end = true;

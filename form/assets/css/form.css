@@ -1,0 +1,68 @@
+.tab-content .tab-pane{
+    padding-top: 20px;
+}
+
+.alert {
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border: 1px solid #42A948; /* green */
+}
+/*
+.ng-invalid:not(form)  {
+  border: 1px solid #a94442;
+} */
+
+.form-control{
+  height: 40px;
+}
+
+.radio-payment img {
+  height: 50px;
+  display: block;
+  margin: auto auto 10px;
+}
+
+.radio-payment .radio-button span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.box-radio {
+  margin-bottom: 20px;
+}
+.box-bill,
+.box-account {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: #f4f4f4;
+  color: #444;
+  font-weight: 600;
+}
+.box-bill img,
+.box-account img {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  height: 20px;
+}
+
+::placeholder{
+  color: #cccccc !important;
+}
+
+@media only screen and (max-width: 764px) {
+  .radio-payment img {
+    height: 25px;
+  }
+
+  .radio-payment .radio-button span {
+    font-size: 14px;
+  }
+}
+
+/* input[type="text"], select{
+  border: 1px solid #eeeeee !important;
+} */

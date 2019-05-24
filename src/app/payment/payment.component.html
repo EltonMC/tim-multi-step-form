@@ -117,13 +117,53 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class='col-xs-12 col-sm-8'>
+            <div class="form-group">
+              <label class="control-label">Nome Completo</label>
+              <input class="form-control input-md" required id="name" name="name" type="text" [(ngModel)]="name1"
+                placeholder="NOME COMPLETO">
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-4'>
+            <div class="form-group">
+              <label class="control-label">Telefone</label>
+              <input class="form-control input-md" required id="phone" name="phone" type="text" placeholder="(00) 00000-0000"
+              [(ngModel)]="phone1" minlength="11" mask="(00) 00000-0000">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-8'>
+            <div class="form-group">
+              <label class="control-label">Nome Completo</label>
+              <input class="form-control input-md" required id="name" name="name" type="text" [(ngModel)]="name2"
+                placeholder="NOME COMPLETO">
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-4'>
+            <div class="form-group">
+              <label class="control-label">Telefone</label>
+              <input class="form-control input-md" required id="phone" name="phone" type="text" placeholder="(00) 00000-0000"
+              [(ngModel)]="phone2" minlength="11" mask="(00) 00000-0000">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-12'>
+            <label>
+              O modem sera enviado via Fedex para o seu endereço, somente as pessoas acima citadas poderão receber o mesmo.
+            </label>
+          </div>
+        </div>
         <div class='row'>
           <div class='col-xs-12 col-sm-12'>
             <div class="form-group">
               <div class="checkbox">
                 <label>
                   <input type="checkbox" required name="terms" value="false" [(ngModel)]="terms">
-                  <strong> Li e concordo com o <a target="_blank" href="https://timpromocao.com.br/wp-content/uploads/2019/01/REGULAMENTO_TIM_INTERNET_CASA.pdf"> Contrato de Permanência TIM Live</a>, <a target="_blank" href="https://timpromocao.com.br/wp-content/uploads/2019/01/INSTRUMENTO_PARTICULAR_COMODATO_MODEM.pdf">Instrumento de Comodato TIM Live</a> e
+                  <strong> Li e concordo com o <a target="_blank" href="https://assineliveinternet.com/wp-content/uploads/2019/01/REGULAMENTO_TIM_INTERNET_CASA.pdf"> Contrato de Permanência TIM Live</a>, <a target="_blank" href="https://assineliveinternet.com/wp-content/uploads/2019/01/INSTRUMENTO_PARTICULAR_COMODATO_MODEM.pdf">Instrumento de Comodato TIM Live</a> e
                     autorizo a TIM entrar em contato comigo nos telefones informados.</strong>
                 </label>
               </div>
