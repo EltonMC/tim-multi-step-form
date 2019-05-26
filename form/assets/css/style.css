@@ -1,0 +1,320 @@
+.container {
+  min-height: 100vh;
+}
+
+.btn-default {
+    border-color: #ccc;
+}
+
+.tab-content .choice {
+  text-align: center;
+  cursor: pointer;
+  margin-top: 38px;
+}
+
+.tab-content .choice i {
+    font-size: 32px;
+    line-height: 55px;
+}
+
+.btn-radio {
+	width: 100%;
+}
+.img-radio {
+	opacity: 0.8;
+	margin-bottom: 5px;
+}
+
+.space-20 {
+    margin-top: 20px;
+}
+
+/* active buttons */
+#status-buttons a.active span.round-tabs.one {
+    background: #004691;
+    color: #fff;
+}
+
+#status-buttons a.active span.round-tabs.two {
+    background: #004691;
+    color: #fff
+}
+
+#status-buttons a.active span.round-tabs.three {
+    background: #004691;
+    color: #fff
+}
+
+#status-buttons a.active span.round-tabs.four {
+    background: #004691;
+    color: #fff
+}
+
+
+.iradio_buttons {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: #febe29 no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.iradio_buttons {
+    background-position: -120px 0;
+}
+.iradio_buttons.hover {
+    background-position: -144px 0;
+}
+.iradio_buttons.checked {
+    background-position: -168px 0;
+}
+
+
+@font-face {
+  font-family: 'Swiss 721 Condensed BT';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Swiss 721 Condensed BT'), url('../fonts/Swiss721CondensedBT.woff') format('woff');
+}
+@font-face {
+  font-family: 'League Spartan Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('League Spartan Bold'), url('../fonts/LeagueSpartan-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+.slider {
+  width: 80%;
+  margin: auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+/* .slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+} */
+
+.plan-box {
+  border: 1px solid #b2b2b2;
+  border-radius: 20px;
+}
+
+.plan-box .box-header {
+  background-color: #134080;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.plan-box .box-header span {
+  font-family: 'Arial';
+  color: white;
+  display: block;
+  padding: 0;
+  line-height: 1;
+}
+
+.plan-box .box-header .title {
+  font-size: 45px;
+}
+
+.plan-box .box-header .description {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.plan-box .box-benefits {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.plan-box .box-benefits span {
+  font-family:'League Spartan Bold';
+  display: block;
+}
+
+.plan-box .box-benefits .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #004691;
+}
+
+.plan-box .box-benefits .channels {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d4145a;
+  margin-bottom: 20px;
+}
+
+.plan-box .box-benefits .tv-partners {
+  font-size: 16px;
+  color: #004691;
+  margin-bottom: 5px;
+}
+
+.plan-box .box-benefits img {
+  width: 50px;
+  padding: 5px;
+  display: inline;
+  vertical-align: middle;
+}
+
+.plan-box .box-body {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+
+.plan-box .box-body span {
+  display: block;
+}
+
+.plan-box .box-body .value {
+  font-family:'Swiss 721 Condensed BT';
+  position: relative;
+  /* left: 25px; */
+  color: #004691;
+  margin-bottom: 10px;
+}
+
+.plan-box .box-body .value .type,
+.plan-box .box-body .value .cents {
+  font-size: 25px;
+  font-weight: 900;
+  top: -25px;
+  position: relative;
+}
+
+.plan-box .box-body .value .price {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.plan-box .box-body .value .month {
+  position: relative;
+  font-weight: bold;
+  left: -40px;
+}
+
+.plan-box .box-body .tax,
+.plan-box .box-body .download,
+.plan-box .box-body .upload,
+.plan-box .box-body .validate {
+  font-size: 14px;
+  color: #333333;
+}
+.plan-box .box-body .promotion label{
+  text-decoration: line-through;
+}
+
+.plan-box .box-body .download,
+.plan-box .box-body .upload {
+  font-family: 'Arial';
+}
+
+.plan-box .box-body .tax{
+  margin-bottom: 10px;
+}
+.plan-box .box-body .tax,
+.plan-box .box-body .validate {
+  font-family:'Myriad Pro Regular';
+}
+
+.plan-box .box-body button {
+  font-family: 'Arial';
+  border: none;
+  background: #5aa012;
+  color: white;
+  padding: 10px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-body-promotion{
+  padding: 10px 0px !important;
+}
+
+.plan-box .box-footer {
+  border-top: 1px solid #eeeeee;
+  padding: 20px;
+  text-align: center;
+}
+
+.plan-box .box-footer .title {
+  font-family:'Myriad Pro Regular';
+  color: #333333;
+}
+
+.slick-prev {
+  left: -20px;
+}
+.slick-prev:before {
+  content: url("../images/left-arrow.png");
+}
+.slick-next {
+  right: 20px;
+}
+.slick-next:before {
+  content: url("../images/right-arrow.png");
+}
+
+.header-tim {
+  background-color: #004691;
+  display: flex;
+}
+.header-tim img {
+  height: 40px;
+  margin: 20px;
+}
+.header-tim .box-0800 {
+  color: white;
+  display: grid;
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 764px) {
+  .header-tim .box-0800 .title {
+    font-size: 15px !important;
+  }
+  .header-tim .box-0800 .number {
+      font-size: 20px !important;
+  }
+}
+.header-tim .box-0800 .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.header-tim .box-0800 .number {
+  font-size: 24px;
+  font-weight: bold;
+}
